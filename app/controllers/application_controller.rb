@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
-
-  helper_method: :current_user, :logged_in?
+  skip_before_action :verify_authenticity_token
+  
+  helper_method :current_user, :logged_in?
 
   def current_user
     # if there isn't a session[:session_token] then no one is logged in

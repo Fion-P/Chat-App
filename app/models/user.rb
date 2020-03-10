@@ -4,7 +4,6 @@
 #
 #  id              :bigint           not null, primary key
 #  username        :string           not null
-#  email           :string           not null
 #  first_name      :string           not null
 #  last_name       :string           not null
 #  password_digest :string           not null
@@ -17,7 +16,7 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  validates :username, :email, uniqueness: true, presence: true
+  validates :username, uniqueness: true, presence: true
   validates :first_name, :last_name, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
