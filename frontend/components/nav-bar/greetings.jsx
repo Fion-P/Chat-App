@@ -2,7 +2,7 @@ import React from "react";
 
 export default ({currentUser, logout}) => {
 
-  let withUser = (
+  let withUser = () => (
     <div className="nav-greeting">
       <div className="welcome-msg">
         Hi, {currentUser.first_name}
@@ -13,12 +13,12 @@ export default ({currentUser, logout}) => {
     </div>
   )
 
-  let noUser = (
+  let noUser = () => (
     <div className="nav-greeting">
       <div className="login-btn">Login</div>
-      <div className="signup-btn">Signup</div>
+      <div className="signup-btn">Get Started</div>
     </div>
   )
 
-  return currentUser ? withUser : noUser;
+  return currentUser ? withUser() : noUser();
 };
