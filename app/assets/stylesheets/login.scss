@@ -105,7 +105,9 @@ button.session-button {
 }
 
 .session-button-container {
-    padding: 20px 0 0 0;
+  padding: 20px 0 0 0;
+  display: flex;
+  align-items: center;
 }
 
 button.session-button:hover {
@@ -115,68 +117,8 @@ button.session-button:hover {
   /* border-color: white; */
 }
 
-
-/* // $breakpoint-tablet: 736px;
-// @media (min-width: 736px) {
-
-//   .splash-photo-container {
-//     display: none;
-//   }
-  
-// } */
-
-/* @media screen and (max-width: 600px)  {
-
-  .h-content1 {
-    display: flex;
-    justify-content: center;
-  }
-
-  .splash-photo-container {
-    display: none;
-  }
-
-  .login-form-container {
-    padding: 3.5% 0 0 10%;
-    width: 100%;
-  }
-
-  h1.login-slogan-h1 {
-    font-size: 35px;
-  }
-
-  .login-input-container {
-    padding-top: 4px;
-  }
-
-  .login-slogan {
-    padding-bottom: 5px;
-  }
-
-  .github a {
-    margin: 0 18px 0 0;
-    font-size: 12px;
-  }
-
-  .signup-btn {
-    font-size: 12px;
-    padding: 9px 12px;
-  }
+.errors {
+  padding-left: 10px;
+  font-size: 14px;
+  color: rgb(168, 10, 10);
 }
-
-@media screen and (max-width: 900px) {
-  .h-content1 {
-    display: flex;
-    justify-content: center;
-  }
-
-  .splash-photo-container {
-    display: none;
-  }
-
-  .login-form-container {
-    padding: 3.5% 0 0;
-    width: 100%;
-  }
-
-} */

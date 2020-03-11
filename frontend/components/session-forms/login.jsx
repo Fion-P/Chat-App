@@ -14,6 +14,10 @@ class Login extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearSessionErrors();
+  }
+
   handleInput(type) {
     this.setState({ [type]: event.target.value });
   }
@@ -27,6 +31,9 @@ class Login extends React.Component {
 
   render() {
     // debugger;
+    let errors = this.props.errors.session;
+    console.log(errors);
+
     return (
       <div className="login-form-container">
         <div className="login-slogan">
@@ -65,7 +72,10 @@ class Login extends React.Component {
             <div className="session-button-container">
               <button className="session-button" onClick={this.handleSubmit}>
                 Sign In
-            </button>
+              </button>
+              <div className="errors">
+                {errors[0]}
+              </div>
             </div>
           </form>
         </div>
