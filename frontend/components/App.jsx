@@ -13,7 +13,7 @@ const App = ({loggedIn}) => (
       <Sidebar />
     </div>
   ) : (
-    <div>
+    <div className="logged-out">
       <Switch>
         {/* < ProtectedRoute exact path="/:userId" component={LoggedHomeContainer}/> */}
         <Route path="/signup" component={Signup}/>

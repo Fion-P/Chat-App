@@ -1,0 +1,133 @@
+.signup-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+// Header 
+
+.signup-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img.signup-icon {
+  width: 65px;
+  padding-bottom: 20px;
+}
+
+h1.signup-title {
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 1);
+  font-size: 38px;
+  font-weight: 100;
+}
+
+h2.sigup-title-h2 {
+    padding: 7px 0 11px 0;
+    font-weight: 100;
+    color: #939393;
+}
+
+// Form
+
+.signup-form-container {
+  padding-top: 10px;
+}
+
+// floating labels
+
+.signup-input-container {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1px;
+  height: 57px;
+}
+
+.signup-input, .signup-input-label {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+.signup-input:focus {
+  outline: 0;
+}
+
+.signup-input {
+  width: 300px;
+  padding: 13px 16px;
+  border-radius: 6px;
+  border: 1px solid #bdbdbdaf;
+  // box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  // box-shadow: 0 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+.signup-input-label {
+  background: none;
+  transform: translate(14px, 32px) scale(0.9);
+  z-index: -1;
+  width: fit-content;
+  // color: #939393;
+  color: #bdbdbd;
+}
+
+.signup-input::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.signup-input:not(:placeholder-shown) + .signup-input-label, .signup-input:focus + .signup-input-label {
+  transform: translate(2px, 9px) scale(0.8);
+  width: fit-content;
+  cursor: pointer;
+  opacity: 1;
+  transition: ease 500ms;
+  padding: 0 5px;
+  border-radius: 16px;
+  z-index: 1;
+  color: black;
+  background: white;
+}
+
+// sign up button
+
+.signup-button-container {
+  padding: 20px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button.signup-button {
+  color: #007AFE;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 25px;
+}
+
+button.signup-button:hover {
+  color: rgba(0, 123, 254, 0.575);
+  transition: 500ms ease;
+}
+
+// filler bottom
+
+.singup-filler-bottom {
+  margin: 50px 0;
+  color: #bdbdbd;
+  letter-spacing: 1px;
+  font-weight: 100;
+  font-size: 13px;
+}
+
+span.signup-spacer {
+  padding: 0 13px;
+}
+
+.signup-flink:hover {
+  transition: 500ms ease;
+  color: #a7a7a7;
+  border-bottom: 1px solid #a7a7a7;
+}
