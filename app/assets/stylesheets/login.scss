@@ -49,7 +49,7 @@ h2.login-slogan-h2 {
 
 .login-input-label {
     background: none;
-    transform: translate(16px, 26px) scale(1);
+    transform: translate(16px, 26px) scale(0.9);
     z-index: -1;
     width: fit-content;
 }
@@ -71,7 +71,7 @@ h2.login-slogan-h2 {
 
 .login-input:not(:placeholder-shown) + .login-input-label, .login-input:focus + .login-input-label {
   transform: translate(-10px, 2px) scale(0.9);
-  background: white;
+  // background: white;
   width: fit-content;
   cursor: pointer;
   opacity: 1;
