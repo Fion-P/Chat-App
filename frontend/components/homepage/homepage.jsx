@@ -70,6 +70,14 @@ export default () => {
           </div>
         </div>
       </div>
+      <div className="h-content3">
+        <div className="all-rights-reserved">
+          <p className="rights-label">© Facebook 2020.</p> The Facebook logos and photos are trademarks of their respective owners.
+        </div>
+        <div className="links">
+
+        </div>
+      </div>
     </div>
   )
 }

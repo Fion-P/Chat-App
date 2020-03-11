@@ -29,7 +29,7 @@ h1.h-content2-header {
   border-radius: 11px;
   display: flex;
   width: 225px;
-  margin: 50px;
+  margin: 55px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -56,4 +56,22 @@ h2.bc-h2 {
   font-size: 12px;
   color: rgba(0, 0, 0, .5);
   padding: 0 0 1px 0;
+}
+
+.h-content3 {
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+
+.all-rights-reserved {
+  display: flex;
+  padding-left: 45px;
+  font-size: 13px;
+  color: #828282;
+}
+
+p.rights-label {
+  color: black;
+  padding-right: 7px;
 }
