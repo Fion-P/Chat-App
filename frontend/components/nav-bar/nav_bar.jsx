@@ -11,12 +11,12 @@ export default () => {
       </div>
       <div className="nav-right">
         <div className="nav-greeting">
-          {/* <div className="login-btn">Login</div> */}
           <div className="github"><a href="https://github.com/Fion-P/Chat-App" target="_blank">Github</a></div>
           <div className="github"><a href="http://fion-pang.com/" target="_blank">Portfolio</a></div>
           <div className="github"><a href="https://www.linkedin.com/in/fion-pang-429172154/" target="_blank">LinkedIn</a></div>
           <div className="signup-btn">Get Started</div>
         </div>
+        {/* <GreetingsContainer /> */}
       </div>
     </div>
   );

@@ -50,3 +50,7 @@ export const logout = () => dispatch => {
     );
 };
 
+
+export const clearSessionErrors = () => dispatch => (
+  dispatch(receiveSessionErrors([]))
+);
