@@ -1,0 +1,48 @@
+.sidebar {
+    width: 30%;
+    max-width: 300px;
+    position: absolute;
+    height: 100%;
+    border-right: 1px solid rgb(230, 230, 230);
+}
+
+.user-info {
+    padding: 0 0 0 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profile-area {
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    align-items: center;
+}
+
+.user-btns {
+  padding: 0 10px 0 0;
+}
+
+svg.svg-inline--fa.fa-sign-out-alt.fa-w-16 {
+  color: black;
+  font-size: 20px;
+  background: #F5F5F5;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+svg.svg-inline--fa.fa-sign-out-alt.fa-w-16:hover, svg.svg-inline--fa.fa-edit.fa-w-18:hover {
+  transition: 500ms ease;
+  opacity: 0.32;
+}
+
+svg.svg-inline--fa.fa-edit.fa-w-18 {
+  margin-left: 10px;
+  color: black;
+  font-size: 20px;
+  background: #F5F5F5;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}

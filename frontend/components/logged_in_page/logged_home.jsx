@@ -1,10 +1,11 @@
-import React from "react"; 
+import React from "react";
+import Sidebar from "../sidebar/sidebar_container"; 
 
 export default () => {
 
   return (
-    <div>
-      Logged In
+    <div className="logged-home">
+      <Sidebar />
     </div>
   );
 };
