@@ -29,13 +29,39 @@
   }
 
   .github a {
-    margin: 0 18px 0 0;
-    font-size: 12px;
+    margin: 0 11px 0 0;
+    font-size: 10px;
   }
 
   .signup-btn {
+    /* font-size: 12px; */
+    /* padding: 9px 12px; */
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  h1.h-content2-header {
+    margin: 0 0 10px 15px;
+  }
+
+  .all-rights-reserved {
+    padding-left: 20px;
+    font-size: 8.5px;
+  }
+
+  h2.sigup-title-h2 {
+    padding: 9px 0 11px 9px;
     font-size: 12px;
-    padding: 9px 12px;
+  }
+
+  .signup-button-container {
+    padding: 15px 0 20px 0;
+  }
+
+  .signup-icon {
+    padding-top: 26px;
+    width: 60px;
+    padding-bottom: 12px;
   }
 }
 
