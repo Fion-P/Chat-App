@@ -122,3 +122,39 @@ button.session-button:hover {
   font-size: 14px;
   color: rgb(168, 10, 10);
 }
+
+// Demo user 
+
+.demo-user {
+  margin: 10px 0;
+}
+
+h1.demo-user-header {
+  font-size: 14px;
+  font-weight: 100;
+  color: #a7a7a7;
+}
+
+button.demo-btn {
+  background: black;
+  color: white;
+  padding: 6px;
+  border-radius: 5px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.fa-facebook, .fa-facebook-square {
+  font-size: 30px;
+  padding: 0 0 0 5px;
+}
+
+span.demo-txt {
+    padding: 0 3px 0 5px;
+}
+
+button.demo-btn:hover {
+  transition: 500ms ease;
+  opacity: 0.5;
+}

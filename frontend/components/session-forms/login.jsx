@@ -12,6 +12,7 @@ class Login extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
   componentDidMount() {
@@ -27,6 +28,44 @@ class Login extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.login(user)
       .then(res => this.props.history.push(`/${res.currentUser.id}`));
+  }
+
+  handleDemoUser() {
+    this.inputUsername("DemoUser");
+    setTimeout(() => {
+      this.inputPassword("password");
+    }, 1200);
+
+  }
+
+  inputUsername(username) {
+    if (username.length <= 0) return;
+    setTimeout(() => {
+      let userArr = username.split("");
+      let current = this.state.username;
+      current += userArr.shift();
+      this.setState({ username: current });
+      let newName = userArr.join('');
+      this.inputUsername(newName);
+    }, 120);
+  }
+
+  inputPassword(password) {
+    if (password.length <= 0) {
+      const user = Object.assign({}, this.state);
+      return this.props
+        .login(user)
+        .then(res => this.props.history.push(`/${res.currentUser.id}`));
+      // .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
+    }
+    setTimeout(() => {
+      let passArr = password.split("");
+      let current = this.state.password;
+      current += passArr.shift();
+      this.setState({ password: current });
+      let newPass = passArr.join('');
+      this.inputPassword(newPass);
+    }, 120);
   }
 
   render() {
@@ -79,7 +118,16 @@ class Login extends React.Component {
             </div>
           </form>
         </div>
-        <div className="test"></div>
+        <div className="demo-user">
+          <h1 className="demo-user-header">Don't have an account?</h1>
+          <button className="demo-btn" onClick={this.handleDemoUser}>
+            <span>
+              <i className="fab fa-facebook"></i>
+              {/* <i class="fab fa-facebook-square"></i> */}
+            </span>
+            <span className="demo-txt">Demo Login</span>
+          </button>
+        </div>
       </div>
     )
   }

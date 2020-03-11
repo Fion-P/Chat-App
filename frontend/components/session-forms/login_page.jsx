@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 
-class Signup extends React.Component {
+class LoginPage extends React.Component {
 
   constructor(props) {
     super(props);
@@ -23,7 +23,7 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.signup(user)
+    this.props.login(user)
       .then(res => this.props.history.push(`/${res.currentUser.id}`));
   }
 
@@ -31,7 +31,7 @@ class Signup extends React.Component {
     let errors = this.props.errors.session.responseJSON || [];
 
     return (
-      <div className="signup-container"> 
+      <div className="signup-container">
         <div className="signup-header">
           <Link to="/"><img src="favicon.png" className="signup-icon" /></Link>
           <h1 className="signup-title">Messenger</h1>
@@ -41,30 +41,7 @@ class Signup extends React.Component {
         </div>
         <div className="signup-form-container">
           <form>
-            <div className="signup-input-container">
-              <input
-                name="first_name"
-                className="signup-input"
-                type="text"
-                value={this.state.first_name}
-                onChange={() => this.handleInput("first_name")}
-                placeholder="First Name"
-              />
-              <label className="signup-input-label" htmlFor="first_name">First Name</label>
-            </div>
-
-            <div className="signup-input-container">
-              <input
-                name="last_name"
-                className="signup-input"
-                type="text"
-                value={this.state.last_name}
-                onChange={() => this.handleInput("last_name")}
-                placeholder="Last Name"
-                autoComplete="on"
-              />
-              <label className="signup-input-label" htmlFor="last_name">Last Name</label>
-            </div>
+             
 
             <div className="signup-input-container">
               <input
@@ -87,17 +64,17 @@ class Signup extends React.Component {
                 onChange={() => this.handleInput("password")}
                 placeholder="Password"
                 autoComplete="on"
-              />
+              /> 
               <label className="signup-input-label" htmlFor="password">Password</label>
             </div>
 
             <div className="session-form-redirect">
-              <Link to="/login">Already have an account?</Link>
+              <Link to="/signup">Don't have an account?</Link>
             </div>
 
             <div className="signup-button-container">
               <button className="signup-button" onClick={this.handleSubmit}>
-                Sign Up
+                Log In
               </button>
               {/* <div className="errors">
                 {errors[0]}
@@ -128,4 +105,4 @@ class Signup extends React.Component {
 
 }
 
-export default withRouter(Signup);
+export default withRouter(LoginPage);

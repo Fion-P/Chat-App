@@ -91,10 +91,29 @@ h2.sigup-title-h2 {
   background: white;
 }
 
+// redirect link
+
+.session-form-redirect a {
+  font-size: 12px;
+  font-weight: 100;
+  color: #a7a7a7;
+  border-bottom: 1px solid white;
+}
+
+.session-form-redirect a:hover {
+  transition: 500ms ease;
+  color: #838383;
+  border-bottom-color: #949393;
+}
+
+.session-form-redirect {
+  padding: 2px 0;
+}
+
 // sign up button
 
 .signup-button-container {
-  padding: 20px 0 0 0;
+  padding: 30px 0 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,6 +130,7 @@ button.signup-button:hover {
   color: rgba(0, 123, 254, 0.575);
   transition: 500ms ease;
 }
+
 
 // filler bottom
 
@@ -131,3 +151,4 @@ span.signup-spacer {
   color: #a7a7a7;
   border-bottom: 1px solid #a7a7a7;
 }
+
