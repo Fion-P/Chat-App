@@ -5,6 +5,7 @@ import Homepage from "./homepage/homepage";
 import { ProtectedRoute } from "../util/route_util";
 import LoggedHomeContainer from "./logged_in_page/logged_home_container";
 import Sidebar from "./sidebar/sidebar_container";
+import Signup from "./session-forms/signup_container";
 
 const App = ({loggedIn}) => (
   loggedIn ? (
@@ -15,6 +16,7 @@ const App = ({loggedIn}) => (
     <div>
       <Switch>
         {/* < ProtectedRoute exact path="/:userId" component={LoggedHomeContainer}/> */}
+        <Route path="/signup" component={Signup}/>
         <Route path="/" component={Homepage} />
       </Switch>
     </div>

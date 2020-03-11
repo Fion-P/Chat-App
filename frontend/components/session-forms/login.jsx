@@ -30,9 +30,8 @@ class Login extends React.Component {
   }
 
   render() {
-    // debugger;
-    let errors = this.props.errors.session;
-    console.log(errors);
+    // flash errors
+    let errors = this.props.errors.session.responseJSON || [];
 
     return (
       <div className="login-form-container">
@@ -68,6 +67,7 @@ class Login extends React.Component {
               />
               <label className="login-input-label" htmlFor="password">Password:</label>
             </div>
+            {/* <div cl></div> */}
 
             <div className="session-button-container">
               <button className="session-button" onClick={this.handleSubmit}>
