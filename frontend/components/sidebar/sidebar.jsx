@@ -2,8 +2,11 @@ import React from "react";
 
 class Sidebar extends React.Component {
 
+  handleLogout() {
+    console.log("hit");
+  }
+
   render() {
-    console.log(this.props)
     let user = this.props.currentUser;
 
     return (
@@ -13,12 +16,14 @@ class Sidebar extends React.Component {
             {user.first_name} {user.last_name}
           </div>
           <div className="user-btns" >
-            <i title="logout" class="fas fa-sign-out-alt" onClick={this.props.logout}></i>
-            <i title="new message" class="far fa-edit"></i>
+            <span onClick={this.props.logout}>
+              <i title="logout" className="fas fa-sign-out-alt" ></i>
+            </span>
+            <i title="new message" className="far fa-edit"></i>
           </div>
         </div>
         <div className="users-search">
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
           <input type="text" className="users-search-bar" placeholder="Search Messenger"/>
         </div>
       </div>

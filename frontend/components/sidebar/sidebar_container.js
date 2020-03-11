@@ -3,7 +3,6 @@ import { logout } from "../../actions/session_actions";
 import Sidebar from "./sidebar";
 
 const mSTP = (state, ownProps) => {
-  console.log(ownProps);
   return {
     currentUser: state.entities.users[state.session.id]
   };
