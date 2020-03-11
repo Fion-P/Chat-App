@@ -1,5 +1,5 @@
 import React from "react";
-
+import { withRouter } from "react-router-dom";
 
 class Login extends React.Component {
 
@@ -21,8 +21,8 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    // debugger;
-    this.props.login(user);
+    this.props.login(user)
+      .then(res => this.props.history.push(`/${res.currentUser.id}`));
   }
 
   render() {
@@ -75,4 +75,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
