@@ -17,6 +17,10 @@ class Sidebar extends React.Component {
             <i title="new message" class="far fa-edit"></i>
           </div>
         </div>
+        <div className="users-search">
+          <i class="fas fa-search"></i>
+          <input type="text" className="users-search-bar" placeholder="Search Messenger"/>
+        </div>
       </div>
     )
   }
