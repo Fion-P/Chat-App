@@ -1,4 +1,59 @@
 .homepage {
-  // font-family: Calibre, Helvetica Neue, Segoe UI, Helvetica, Arial, Lucida Grande, sans-serif;
   font-family: sans-serif;
+}
+
+.h-content2 {
+  margin-top: 70px;
+  background-color: #F5F5F5;
+  display: flex;
+  padding-top: 75px;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 45px;
+}
+
+h1.h-content2-header {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.h-content2-blocks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.c2-block-container {
+  background: white;
+  border-radius: 11px;
+  display: flex;
+  width: 225px;
+  margin: 50px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.c2-block {
+  padding: 16px;
+}
+
+.block-img {
+  height: 204px;
+}
+
+.c2-block-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1.bc-h1 {
+  font-weight: 600;
+  padding: 0 0 2px 0;
+}
+
+h2.bc-h2 {
+  font-size: 12px;
+  color: rgba(0, 0, 0, .5);
+  padding: 0 0 1px 0;
 }
