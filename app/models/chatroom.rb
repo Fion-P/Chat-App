@@ -1,25 +1,23 @@
 # == Schema Information
 #
-# Table name: channels
+# Table name: chatrooms
 #
 #  id         :bigint           not null, primary key
-#  name       :string           not null
+#  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class Channel < ApplicationRecord
+class Chatroom < ApplicationRecord
 
   has_many :messages,
-    foreign_key: :channel_id,
+    foreign_key: :chatroom_id,
     class_name: :Message
-  
-  has_many :chats,
-    foreign_key: :channel_id,
-    class_name: :Chat
+
+  has_many :chatroom_users,
+    foreign_key: :chatroom_id,
+    class_name: :ChatroomUser
 
   has_many :users,
-    through: :chats,
+    through: :chatroom_users,
     source: :user
-
-    
 end
