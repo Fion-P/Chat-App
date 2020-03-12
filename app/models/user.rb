@@ -26,6 +26,14 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Message
 
+  has_many :chats,
+    foreign_key: :user_id,
+    class_name: :Chat
+
+  has_many :channels,
+    through: :chats,
+    source: :channel
+
   def self.find_by_credentials(username, password)
     # find the user by the username
     user = User.find_by(username: username)
