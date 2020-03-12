@@ -22,6 +22,10 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
+  has_many :messages,
+    foreign_key: :user_id,
+    class_name: :Message
+
   def self.find_by_credentials(username, password)
     # find the user by the username
     user = User.find_by(username: username)

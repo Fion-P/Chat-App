@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
   end
 
+  mount ActionCable.server, at: '/cable'
+
   root "static_pages#root"
 end
