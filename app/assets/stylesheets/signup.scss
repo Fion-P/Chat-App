@@ -36,7 +36,7 @@ h2.sigup-title-h2 {
 
 .signup-form-container {
   padding-top: 10px;
-  position: relative;
+  // position: relative;
 }
 
 // floating labels
@@ -185,3 +185,8 @@ span.signup-spacer {
 // .login-page-container {
 //   position: relative;
 // }
+
+.login-page-err-container {
+  position: relative;
+  padding: 0 0 3px 0;
+}

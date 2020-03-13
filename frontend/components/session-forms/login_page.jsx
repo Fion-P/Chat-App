@@ -51,9 +51,11 @@ class LoginPage extends React.Component {
           </h2>
         </div>
         <div className="signup-form-container">
-          <div className="login-page-errors">
-            {/* {errors[0]} */}
-            Invalid username/password
+          <div className="login-page-err-container">
+            <div className="login-page-errors">
+              {/* {errors[0]} */}
+              Invalid username/password
+            </div>
           </div>
           <form>
             <div className="signup-input-container">
