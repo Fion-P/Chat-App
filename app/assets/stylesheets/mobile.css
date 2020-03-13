@@ -3,7 +3,7 @@
   .h-content1 {
     display: flex;
     justify-content: center;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
   }
 
   .splash-photo-container {
@@ -11,7 +11,7 @@
   }
 
   .login-form-container {
-    padding: 3.5% 0 0 10%;
+    padding: 3.5% 0 5% 2%;
     width: 100%;
   }
 
@@ -82,15 +82,16 @@
   .h-content1 {
     display: flex;
     justify-content: center;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
   }
 
   .splash-photo-container {
     display: none;
+    width: 500px;
   }
 
   .login-form-container {
-    padding: 3.5% 0 0;
+    padding: 3.5% 0 5%;
     width: auto;
   }
 

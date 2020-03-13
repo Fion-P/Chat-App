@@ -41,20 +41,21 @@ class Signup extends React.Component {
 
   checkError(param, htmlClass, err, errMsg) {
     let errors = this.props.errors.session.responseJSON || [];
-    console.log(errors);
+
     if (err.includes(param)) {
       // document.querySelector(htmlClass).classList.add("red-bord");
       document.querySelector(htmlClass).style.borderColor = "#d93125e3";
       document.querySelector(errMsg).style.display = "block";
 
-      // if (param === "Username") {
+      if (param === "Username" || param === "Password") {
         errors.forEach( err => {
           if (err.includes(param)) {
             document.querySelector(errMsg).innerHTML = err;
             // break;
           }
         });
-      // }
+      }
+      
     } else {
       // document.querySelector(htmlClass).classList.remove("red-bord");
       document.querySelector(htmlClass).style.borderColor = "#bdbdbdaf";
