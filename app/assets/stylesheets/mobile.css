@@ -72,6 +72,10 @@
     color: #d93025;
     display: none; */
   }
+
+  .logged-out {
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 900px) {
