@@ -35,7 +35,7 @@ h2.sigup-title-h2 {
 // Form
 
 .signup-form-container {
-  padding-top: 20px;
+  padding-top: 10px;
   // position: relative;
 }
 
@@ -179,14 +179,9 @@ span.signup-spacer {
   left: 27%;
   top: -2px;
   color: #d93025;
-  display: none;
+  // display: none;
 }
 
-// .login-page-container {
-//   position: relative;
-// }
-
-.login-page-err-container {
+.login-page-container {
   position: relative;
-  padding: 0 0 3px 0;
 }
