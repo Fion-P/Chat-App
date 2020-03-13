@@ -16,6 +16,10 @@ class LoginPage extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearSessionErrors();
+  }
+
   handleInput(type) {
     this.setState({ [type]: event.target.value });
   }
@@ -38,7 +42,7 @@ class LoginPage extends React.Component {
 
   render() {
     let errors = this.props.errors.session.responseJSON || [];
-    console.log(errors[0]);
+
     return (
       <div className="signup-container">
         <div className="signup-header">
@@ -53,8 +57,8 @@ class LoginPage extends React.Component {
         <div className="signup-form-container">
           <div className="login-page-err-container">
             <div className="login-page-errors">
-              {/* {errors[0]} */}
-              Invalid username/password
+              {errors[0]}
+              {/* Invalid username/password */}
             </div>
           </div>
           <form>

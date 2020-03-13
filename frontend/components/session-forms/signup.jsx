@@ -50,7 +50,6 @@ class Signup extends React.Component {
   }
 
   render() {
-    let errors = this.props.errors.session.responseJSON || [];
 
     return (
       <div className="signup-container">

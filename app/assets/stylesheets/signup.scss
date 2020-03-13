@@ -179,9 +179,10 @@ span.signup-spacer {
   left: 27%;
   top: -2px;
   color: #d93025;
-  // display: none;
+  display: none;
 }
 
-.login-page-container {
-  position: relative;
+.login-page-err-container {
+    position: relative;
+    padding-bottom: 5px;
 }
