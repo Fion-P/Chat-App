@@ -1,6 +1,8 @@
 class Api::ChatroomUsersController < ApplicationController
 
-  def create
+  def create #add user to chat
+
+    # check if user already exists
     @chatroom_user = ChatroomUser.find_by(
       user_id: current_user.id,
       chatroom_id: chatroom_user_params[:chatroom_id]
@@ -20,6 +22,8 @@ class Api::ChatroomUsersController < ApplicationController
       end
     end
   end
+
+  private
 
   def chatroom_user_params
     params.require(:chatroom_user).permit(:chatroom_id)
