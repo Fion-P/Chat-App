@@ -1,5 +1,5 @@
 @chatrooms.each do |chatroom|
   json.set! chatroom.id do
-    json.partial! 'chatroom', chatroom: chatroom
+    json.extract! chatroom, :title
   end
 end

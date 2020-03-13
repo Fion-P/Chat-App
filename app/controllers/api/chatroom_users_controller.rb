@@ -13,7 +13,7 @@ class Api::ChatroomUsersController < ApplicationController
     else
       @chatroom_user = ChatroomUser.new(
         user_id: current_user.id,
-        channel_id: chatroom_user_params[:chatroom_id]
+        chatroom_id: chatroom_user_params[:chatroom_id]
       )
       if @chatroom_user.save
         render 'api/chatroom_users/show'

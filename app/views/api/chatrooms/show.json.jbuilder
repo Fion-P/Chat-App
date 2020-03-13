@@ -1,6 +1,6 @@
 json.chatrooms do
-  json.partial! '/api/chatroomss/chatrooms', chatrooms: @chatrooms
-  json.reviewIds @chatrooms.users.pluck(:id)
+  json.partial! '/api/chatrooms/chatroom', chatroom: @chatroom
+  json.reviewIds @chatroom.users.pluck(:id)
 end
 
 # json.

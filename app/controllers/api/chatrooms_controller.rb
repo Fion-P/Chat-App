@@ -1,13 +1,13 @@
 class Api::ChatroomsController < ApplicationController
 
   def index
-    chatroom_ids = ChatroomUser.where(user_id: params[:id]).pluck(:chatroom_id)
+    chatroom_ids = ChatroomUser.where(user_id: params[:user_id]).pluck(:chatroom_id)
     @chatrooms = Chatroom.where(:id => chatroom_ids)
     render :index
   end
 
   def create
-    @chatroom = Channel.new(channel_params)
+    @chatroom = Chatroom.new(chatroom_params)
 
     if @chatroom.save
       render :show
