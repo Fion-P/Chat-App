@@ -63,6 +63,10 @@
     width: 60px;
     padding-bottom: 12px;
   }
+
+  .input-fn-err, .input-ln-err, .input-uname-err, .input-pw-err {
+    top: -2px;
+  }
 }
 
 @media screen and (max-width: 900px) {
