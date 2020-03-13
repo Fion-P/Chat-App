@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 class Login extends React.Component {
 
@@ -125,13 +125,26 @@ class Login extends React.Component {
         </div>
         <div className="demo-user">
           <h1 className="demo-user-header">Don't have an account?</h1>
-          <button className="demo-btn" onClick={this.handleDemoUser}>
-            <span>
-              <i className="fab fa-facebook"></i>
-              {/* <i class="fab fa-facebook-square"></i> */}
-            </span>
-            <span className="demo-txt">Demo Login</span>
-          </button>
+          <div>
+
+            <Link to="/signup" className="create-acct-btn" >
+              <span>
+                <i className="fab fa-facebook"></i>
+              </span>
+              <span className="demo-txt">  Create An Account </span>
+            </Link>
+
+            {/* <h2 className="demo-create-or">Or</h2> */}
+            
+            <button className="demo-btn" onClick={this.handleDemoUser}>
+              <span>
+                <i className="fab fa-facebook"></i>
+                {/* <i class="fab fa-facebook-square"></i> */}
+              </span>
+              <span className="demo-txt"> Try Demo Login</span>
+            </button>
+          </div>
+
         </div>
       </div>
     )

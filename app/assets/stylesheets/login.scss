@@ -135,7 +135,7 @@ h1.demo-user-header {
   color: #a7a7a7;
 }
 
-button.demo-btn {
+button.demo-btn, .create-acct-btn {
   background: black;
   color: white;
   padding: 6px;
@@ -143,6 +143,7 @@ button.demo-btn {
   margin-top: 5px;
   display: flex;
   align-items: center;
+  width: 186px;
 }
 
 .fa-facebook, .fa-facebook-square {
@@ -154,7 +155,14 @@ span.demo-txt {
     padding: 0 3px 0 5px;
 }
 
-button.demo-btn:hover {
+button.demo-btn:hover, .create-acct-btn:hover {
   transition: 500ms ease;
   opacity: 0.5;
+}
+
+.demo-create-or {
+  font-size: 14px;
+  font-weight: 100;
+  color: #a7a7a7;
+  margin: 3px 0 -2px 0;
 }
