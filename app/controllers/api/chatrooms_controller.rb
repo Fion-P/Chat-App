@@ -6,6 +6,15 @@ class Api::ChatroomsController < ApplicationController
     render :index
   end
 
+  def show
+    @chatroom = Chatroom.find_by_id(params[:id])
+    if @chatroom
+      render 'api/chats/show'
+    else
+      render json: ["Chat doesn't exist"], status: 401
+    end
+  end
+  
   def create
     @chatroom = Chatroom.new(chatroom_params)
 
@@ -16,14 +25,6 @@ class Api::ChatroomsController < ApplicationController
     end
   end
 
-  def show
-    @chatroom = Chatroom.find_by_id(params[:id])
-    if @chatroom
-      render 'api/chats/show'
-    else
-      render json: ["Chat doesn't exist"], status: 401
-    end
-  end
 
   private 
 
