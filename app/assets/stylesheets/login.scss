@@ -125,6 +125,11 @@ button.session-button:hover {
 
 // Demo user 
 
+.login-no-acct-container {
+  display: flex;
+  align-items: center;
+}
+
 .demo-user {
   margin: 10px 0;
 }
@@ -137,18 +142,19 @@ h1.demo-user-header {
 
 button.demo-btn, .create-acct-btn {
   background: black;
+  font-size: 13.5px;
   color: white;
-  padding: 6px;
+  padding: 4px;
   border-radius: 5px;
   margin-top: 5px;
   display: flex;
   align-items: center;
-  width: 186px;
+  width: 154px;
 }
 
 .fa-facebook, .fa-facebook-square {
-  font-size: 30px;
-  padding: 0 0 0 5px;
+  font-size: 28px;
+  padding: 0 0 0 1px;
 }
 
 span.demo-txt {
@@ -161,8 +167,8 @@ button.demo-btn:hover, .create-acct-btn:hover {
 }
 
 .demo-create-or {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 100;
   color: #a7a7a7;
-  margin: 3px 0 -2px 0;
+  margin: 0 4px 0 3px;
 }

@@ -125,7 +125,7 @@ class Login extends React.Component {
         </div>
         <div className="demo-user">
           <h1 className="demo-user-header">Don't have an account?</h1>
-          <div>
+          <div className="login-no-acct-container">
 
             <Link to="/signup" className="create-acct-btn" >
               <span>
@@ -134,12 +134,12 @@ class Login extends React.Component {
               <span className="demo-txt">  Create An Account </span>
             </Link>
 
-            {/* <h2 className="demo-create-or">Or</h2> */}
+            <h2 className="demo-create-or">or</h2>
             
             <button className="demo-btn" onClick={this.handleDemoUser}>
               <span>
-                <i className="fab fa-facebook"></i>
-                {/* <i class="fab fa-facebook-square"></i> */}
+                {/* <i className="fab fa-facebook"></i> */}
+                <i class="fab fa-facebook-square"></i>
               </span>
               <span className="demo-txt"> Try Demo Login</span>
             </button>
