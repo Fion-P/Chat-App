@@ -45,6 +45,7 @@ class Signup extends React.Component {
     if (err.includes(param)) {
       // document.querySelector(htmlClass).classList.add("red-bord");
       document.querySelector(htmlClass).style.borderColor = "#d93125e3";
+      document.querySelector(htmlClass).style.boxShadow = "0 0px 3px #d93125e3";
       document.querySelector(errMsg).style.display = "block";
 
       if (param === "Username" || param === "Password") {
@@ -59,6 +60,7 @@ class Signup extends React.Component {
     } else {
       // document.querySelector(htmlClass).classList.remove("red-bord");
       document.querySelector(htmlClass).style.borderColor = "#bdbdbdaf";
+      document.querySelector(htmlClass).style.boxShadow = "none";
       document.querySelector(errMsg).style.display = "none";
     }
   }

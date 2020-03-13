@@ -35,6 +35,7 @@ class LoginPage extends React.Component {
   handleErrors() {
     document.querySelectorAll(".input-login-page ").forEach( el => {
       el.style.borderColor = "#d93125e3";
+      el.style.boxShadow = "0 0px 3px #d93125e3";
     });
 
     document.querySelector(".login-page-errors").style.display = "block";
