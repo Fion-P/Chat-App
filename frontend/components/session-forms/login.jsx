@@ -31,6 +31,11 @@ class Login extends React.Component {
   }
 
   handleDemoUser() {
+    this.setState({
+      username: "",
+      password: "",
+    });
+
     this.inputUsername("DemoUser");
     setTimeout(() => {
       this.inputPassword("password");

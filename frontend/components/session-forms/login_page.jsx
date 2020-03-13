@@ -6,8 +6,6 @@ class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      first_name: "",
-      last_name: "",
       username: "",
       password: "",
     };
@@ -43,6 +41,11 @@ class LoginPage extends React.Component {
   }
 
   handleDemoUser() {
+    this.setState({
+      username: "",
+      password: "",
+    });
+
     this.inputUsername("DemoUser");
     setTimeout(() => {
       this.inputPassword("password");

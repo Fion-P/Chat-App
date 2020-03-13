@@ -67,6 +67,13 @@ class Signup extends React.Component {
   }
 
   handleDemoUser() {
+    this.setState({
+      first_name: "",
+      last_name: "",
+      username: "",
+      password: ""
+    });
+    
     this.inputUsername("DemoUser");
     setTimeout(() => {
       this.inputPassword("password");
