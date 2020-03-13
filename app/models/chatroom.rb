@@ -11,11 +11,13 @@ class Chatroom < ApplicationRecord
 
   has_many :messages,
     foreign_key: :chatroom_id,
-    class_name: :Message
+    class_name: :Message,
+    dependent: :destroy
 
   has_many :chatroom_users,
     foreign_key: :chatroom_id,
-    class_name: :ChatroomUser
+    class_name: :ChatroomUser,
+    dependent: :destroy
 
   has_many :users,
     through: :chatroom_users,
