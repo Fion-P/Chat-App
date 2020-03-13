@@ -8,13 +8,14 @@ import Sidebar from "./sidebar/sidebar_container";
 import Signup from "./session-forms/signup_container";
 import LoginPage from "./session-forms/login_page_container";
 import ChatRoom from "./chat/ChatRoom";
+import CreateChat from "./create_chat/create_chat_container";
 
 const App = ({loggedIn}) => (
   loggedIn ? (
     <div className="logged-home">
       <Sidebar />
       <Switch>
-        {/* <Route path="/" component={ChatRoom} /> */}
+        <Route path="/new_message/:chatroom_id" component={CreateChat} />
       </Switch>
     </div>
   ) : (

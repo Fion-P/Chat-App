@@ -27,7 +27,7 @@ class LoginPage extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.login(user)
-      .then(res => this.props.history.push(`/${res.currentUser.id}`),
+      .then((res) => this.props.history.push(`/`),
       () => this.handleErrors());
   }
 
@@ -70,7 +70,7 @@ class LoginPage extends React.Component {
       const user = Object.assign({}, this.state);
       return this.props
         .login(user)
-        .then(res => this.props.history.push(`/${res.currentUser.id}`));
+        .then(res => this.props.history.push(`/`));
       // .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
     }
     setTimeout(() => {

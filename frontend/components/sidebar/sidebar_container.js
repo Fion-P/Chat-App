@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from "../../actions/session_actions";
+import { createChatroom, createChatroomUser} from "../../actions/chatroom_actions";
 import Sidebar from "./sidebar";
 
 const mSTP = (state, ownProps) => {
@@ -10,7 +11,9 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    createChatroom: (chatroom) => dispatch(createChatroom(chatroom)),
+    createChatroomUser: (chatroomUser) => dispatch(createChatroomUser(chatroomUser))
   };
 };
 

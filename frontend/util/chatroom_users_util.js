@@ -1,8 +1,9 @@
 
-export const createChatroomUser = chatroomUser => {
+export const createChatroomUser = chatroom_user => {
+  // console.log(chatroomUser);
   return $.ajax({
     method: 'POST',
     url: `/api/chatroom_users`,
-    data: { chatroomUser }
+    data: { chatroom_user }
   });
 };

@@ -2,25 +2,17 @@ class Api::ChatroomUsersController < ApplicationController
 
   def create #add user to chat
 
-    # check if user already exists
-    @chatroom_user = ChatroomUser.find_by(
+    @chatroom_user = ChatroomUser.new(
       user_id: current_user.id,
       chatroom_id: chatroom_user_params[:chatroom_id]
     )
-
-    if @chatroom_user
-      render json: ["User is already in the chat"], status: 401
+    
+    if @chatroom_user.save
+      render 'api/chatroom_users/show'
     else
-      @chatroom_user = ChatroomUser.new(
-        user_id: current_user.id,
-        chatroom_id: chatroom_user_params[:chatroom_id]
-      )
-      if @chatroom_user.save
-        render 'api/chatroom_users/show'
-      else
-        render json: ["Failed to join chat"], status: 401
-      end
+      render json: ["Failed to join chat"], status: 401
     end
+
   end
 
   private

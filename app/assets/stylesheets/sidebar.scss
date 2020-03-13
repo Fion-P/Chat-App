@@ -1,7 +1,7 @@
 .sidebar {
     width: 34%;
     max-width: 300px;
-    position: absolute;
+    // position: fixed;
     height: 100%;
     border-right: 1px solid rgb(230, 230, 230);
 }
@@ -55,12 +55,13 @@ input.users-search-bar {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 svg.svg-inline--fa.fa-search.fa-w-16 {
   position: absolute;
-  // left: 21px;
-  left: 9%;
+  top: 9%;
+  left: 6.5%;
   color: #939393;
   font-size: 14px;
 }

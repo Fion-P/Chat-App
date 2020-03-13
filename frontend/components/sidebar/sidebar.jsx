@@ -1,9 +1,30 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 class Sidebar extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.createChat = this.createChat.bind(this);
+  }
+
   handleLogout() {
     console.log("hit");
+  }
+
+  createChat() {
+    let user = this.props.currentUser;
+    let chatroom = { title: "chat" };
+    this.props.createChatroom(chatroom)
+      .then( res => {
+        const chatroom_id = res.chatroom.chatroom.id;
+        const chatUser = {
+          chatroom_id: chatroom_id,
+          user_id: user.id
+        };
+        this.props.createChatroomUser(chatUser)
+          .then(() => this.props.history.push(`/new_message/${chatroom_id}`))
+      });
   }
 
   render() {
@@ -19,7 +40,9 @@ class Sidebar extends React.Component {
             <span onClick={this.props.logout}>
               <i title="logout" className="fas fa-sign-out-alt" ></i>
             </span>
-            <i title="new message" className="far fa-edit"></i>
+            <span onClick={this.createChat}>
+              <i title="new message" className="far fa-edit" ></i>
+            </span>
           </div>
         </div>
         <div className="users-search">
@@ -31,4 +54,4 @@ class Sidebar extends React.Component {
   }
 }
 
-export default Sidebar;
+export default withRouter(Sidebar);

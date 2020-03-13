@@ -15,6 +15,10 @@ class Signup extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
   }
+  
+  componentDidMount() {
+    this.props.clearSessionErrors();
+  }
 
   handleInput(type) {
     this.setState({ [type]: event.target.value });
@@ -23,10 +27,11 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.signup(user).then(
-      res => this.props.history.push(`/${res.currentUser.id}`),
+    this.props.signup(user)
+      .then(
+      res => this.props.history.push(`/`),
       () => this.handleErrors()
-    );
+      );
   }
 
   handleErrors() {
@@ -98,7 +103,7 @@ class Signup extends React.Component {
       const user = Object.assign({}, this.state);
       return this.props
         .login(user)
-        .then(res => this.props.history.push(`/${res.currentUser.id}`));
+        .then(res => this.props.history.push(`/`));
       // .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
     }
     setTimeout(() => {

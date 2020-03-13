@@ -26,8 +26,8 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.login(user)
-      .then(res => this.props.history.push(`/${res.currentUser.id}`));
+    this.props.login(user);
+      // .then(res => this.props.history.push(`/${res.currentUser.id}`));
   }
 
   handleDemoUser() {
@@ -59,8 +59,8 @@ class Login extends React.Component {
     if (password.length <= 0) {
       const user = Object.assign({}, this.state);
       return this.props
-        .login(user)
-        .then(res => this.props.history.push(`/${res.currentUser.id}`));
+        .login(user);
+        // .then(res => this.props.history.push(`/${res.currentUser.id}`));
       // .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
     }
     setTimeout(() => {
@@ -139,7 +139,7 @@ class Login extends React.Component {
             <button className="demo-btn" onClick={this.handleDemoUser}>
               <span>
                 {/* <i className="fab fa-facebook"></i> */}
-                <i class="fab fa-facebook-square"></i>
+                <i className="fab fa-facebook-square"></i>
               </span>
               <span className="demo-txt"> Try Demo Login</span>
             </button>
