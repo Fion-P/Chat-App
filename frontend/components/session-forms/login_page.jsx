@@ -14,6 +14,7 @@ class LoginPage extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoUser = this.handleDemoUser.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +42,44 @@ class LoginPage extends React.Component {
     document.querySelector(".login-page-errors").style.display = "block";
   }
 
+  handleDemoUser() {
+    this.inputUsername("DemoUser");
+    setTimeout(() => {
+      this.inputPassword("password");
+    }, 1200);
+
+  }
+
+  inputUsername(username) {
+    if (username.length <= 0) return;
+    setTimeout(() => {
+      let userArr = username.split("");
+      let current = this.state.username;
+      current += userArr.shift();
+      this.setState({ username: current });
+      let newName = userArr.join('');
+      this.inputUsername(newName);
+    }, 120);
+  }
+
+  inputPassword(password) {
+    if (password.length <= 0) {
+      const user = Object.assign({}, this.state);
+      return this.props
+        .login(user)
+        .then(res => this.props.history.push(`/${res.currentUser.id}`));
+      // .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
+    }
+    setTimeout(() => {
+      let passArr = password.split("");
+      let current = this.state.password;
+      current += passArr.shift();
+      this.setState({ password: current });
+      let newPass = passArr.join('');
+      this.inputPassword(newPass);
+    }, 120);
+  }
+
   render() {
     let errors = this.props.errors.session.responseJSON || [];
 
@@ -54,6 +93,9 @@ class LoginPage extends React.Component {
           <h2 className="sigup-title-h2">
             Connect with friends and the world around you on Facebook.
           </h2>
+          <div onClick={this.handleDemoUser} className="session-page-demo">
+            Try Demo User
+          </div>
         </div>
         <div className="signup-form-container">
           <div className="login-page-err-container">

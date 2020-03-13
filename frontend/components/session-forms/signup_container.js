@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Signup from "./signup";
-import { signup, clearSessionErrors } from "../../actions/session_actions";
+import { signup, clearSessionErrors, login } from "../../actions/session_actions";
 
 const mSTP = (state) => {
   return ({
@@ -11,7 +11,8 @@ const mSTP = (state) => {
 const mDTP = dispatch => {
   return ({
     clearSessionErrors: () => dispatch(clearSessionErrors()),
-    signup: (user) => dispatch(signup(user))
+    signup: (user) => dispatch(signup(user)),
+    login: (user) => dispatch(login(user))
   });
 };
 

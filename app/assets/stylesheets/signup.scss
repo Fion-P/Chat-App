@@ -27,7 +27,8 @@ h1.signup-title {
 }
 
 h2.sigup-title-h2 {
-  padding: 7px 0 15px 0;
+  // padding: 7px 0 15px 0;
+  padding: 7px 0 7px 0;
   font-weight: 100;
   color: #939393;
 }
@@ -121,6 +122,7 @@ h2.sigup-title-h2 {
 
 .signup-button-container {
   padding: 30px 0 20px 0;
+  // padding: 30px 0 6px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,4 +187,19 @@ span.signup-spacer {
 .login-page-err-container {
     position: relative;
     padding-bottom: 5px;
+}
+
+// Demo User
+
+.session-page-demo {
+  display: flex;
+  justify-content: center;
+  color: #007AFE;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.session-page-demo:hover {
+  transition: 500ms ease;
+  opacity: 0.4;
 }
