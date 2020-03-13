@@ -31,6 +31,8 @@ class Signup extends React.Component {
   handleErrors() {
     // console.log(this.props.errors.session.responseJSON);
     let err = this.props.errors.session.responseText;
+    // let errors = this.props.errors.session.responseJSON || [];
+
     this.checkError("First", ".input-fn", err, ".input-fn-err");
     this.checkError("Last", ".input-ln", err, ".input-ln-err");
     this.checkError("Username", ".input-uname", err, ".input-uname-err");
@@ -38,10 +40,21 @@ class Signup extends React.Component {
   }
 
   checkError(param, htmlClass, err, errMsg) {
+    let errors = this.props.errors.session.responseJSON || [];
+    console.log(errors);
     if (err.includes(param)) {
       // document.querySelector(htmlClass).classList.add("red-bord");
       document.querySelector(htmlClass).style.borderColor = "#d93125e3";
       document.querySelector(errMsg).style.display = "block";
+
+      // if (param === "Username") {
+        errors.forEach( err => {
+          if (err.includes(param)) {
+            document.querySelector(errMsg).innerHTML = err;
+            // break;
+          }
+        });
+      // }
     } else {
       // document.querySelector(htmlClass).classList.remove("red-bord");
       document.querySelector(htmlClass).style.borderColor = "#bdbdbdaf";
