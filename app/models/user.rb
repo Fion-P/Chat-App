@@ -34,6 +34,14 @@ class User < ApplicationRecord
     through: :chatroom_memberships,
     source: :chatroom
 
+  has_many :friendships,
+    foreign_key: :user_id,
+    class_name: :Friend
+
+  has_many :friends,
+    through: :friendships,
+    source: :friend
+
   def self.find_by_credentials(username, password)
     # find the user by the username
     user = User.find_by(username: username)
