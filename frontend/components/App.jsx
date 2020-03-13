@@ -14,7 +14,7 @@ const App = ({loggedIn}) => (
     <div className="logged-home">
       <Sidebar />
       <Switch>
-        <Route path="/" component={ChatRoom} />
+        {/* <Route path="/" component={ChatRoom} /> */}
       </Switch>
     </div>
   ) : (

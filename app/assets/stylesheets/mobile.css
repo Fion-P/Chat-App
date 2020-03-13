@@ -7,7 +7,7 @@
   }
 
   .splash-photo-container {
-    display: none;
+    /* display: none; */
   }
 
   .login-form-container {
@@ -86,12 +86,12 @@
   }
 
   .splash-photo-container {
-    display: none;
+    /* display: none; */
     width: 500px;
   }
 
   .login-form-container {
-    padding: 3.5% 0 5%;
+    padding: 3.5% 0 5% 1%;
     width: auto;
   }
 
