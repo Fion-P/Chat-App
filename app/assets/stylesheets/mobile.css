@@ -65,7 +65,12 @@
   }
 
   .input-fn-err, .input-ln-err, .input-uname-err, .input-pw-err {
+    /* position: absolute;
     top: -2px;
+    right: 3px;
+    font-size: 11px;
+    color: #d93025;
+    display: none; */
   }
 }
 

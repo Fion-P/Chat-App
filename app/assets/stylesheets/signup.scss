@@ -44,7 +44,7 @@ h2.sigup-title-h2 {
 .signup-input-container {
   display: flex;
   flex-flow: column-reverse;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   height: 57px;
   position: relative;
 }
@@ -164,7 +164,7 @@ span.signup-spacer {
 
 .input-fn-err, .input-ln-err, .input-uname-err, .input-pw-err {
   position: absolute;
-  top: -1px;
+  top: -2px;
   right: 3px;
   font-size: 11px;
   color: #d93025;
