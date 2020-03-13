@@ -36,6 +36,7 @@ h2.sigup-title-h2 {
 
 .signup-form-container {
   padding-top: 10px;
+  position: relative;
 }
 
 // floating labels
@@ -66,7 +67,7 @@ h2.sigup-title-h2 {
   // box-shadow: 0 0px 3px rgba(0, 0, 0, 0.1);
 }
 
-.input-fn, .input-ln, .input-uname, .input-pw {
+.input-fn, .input-ln, .input-uname, .input-pw, .input-login-page {
   border-radius: 6px;
   border: 1px solid #bdbdbdaf;
 }
@@ -169,3 +170,18 @@ span.signup-spacer {
   color: #d93025;
   display: none;
 }
+
+// login page errors
+
+.login-page-errors {
+  position: absolute;
+  font-size: 12px;
+  left: 27%;
+  top: -2px;
+  color: #d93025;
+  display: none;
+}
+
+// .login-page-container {
+//   position: relative;
+// }

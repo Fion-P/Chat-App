@@ -24,48 +24,65 @@ class LoginPage extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.login(user)
-      .then(res => this.props.history.push(`/${res.currentUser.id}`));
+      .then(res => this.props.history.push(`/${res.currentUser.id}`),
+      () => this.handleErrors());
+  }
+
+  handleErrors() {
+    document.querySelectorAll(".input-login-page ").forEach( el => {
+      el.style.borderColor = "#d93125e3";
+    });
+
+    document.querySelector(".login-page-errors").style.display = "block";
   }
 
   render() {
     let errors = this.props.errors.session.responseJSON || [];
-
+    console.log(errors[0]);
     return (
       <div className="signup-container">
         <div className="signup-header">
-          <Link to="/"><img src="favicon.png" className="signup-icon" /></Link>
+          <Link to="/">
+            <img src="favicon.png" className="signup-icon" />
+          </Link>
           <h1 className="signup-title">Messenger</h1>
           <h2 className="sigup-title-h2">
             Connect with friends and the world around you on Facebook.
           </h2>
         </div>
         <div className="signup-form-container">
+          <div className="login-page-errors">
+            {/* {errors[0]} */}
+            Invalid username/password
+          </div>
           <form>
-             
-
             <div className="signup-input-container">
               <input
                 name="username"
-                className="signup-input"
+                className="signup-input input-login-page"
                 type="text"
                 value={this.state.username}
                 onChange={() => this.handleInput("username")}
                 placeholder="Username"
               />
-              <label className="signup-input-label" htmlFor="username">Username</label>
+              <label className="signup-input-label" htmlFor="username">
+                Username
+              </label>
             </div>
 
             <div className="signup-input-container">
               <input
                 name="password"
                 type="password"
-                className="signup-input"
+                className="signup-input input-login-page"
                 value={this.state.password}
                 onChange={() => this.handleInput("password")}
                 placeholder="Password"
                 autoComplete="on"
-              /> 
-              <label className="signup-input-label" htmlFor="password">Password</label>
+              />
+              <label className="signup-input-label" htmlFor="password">
+                Password
+              </label>
             </div>
 
             <div className="session-form-redirect">
@@ -76,31 +93,39 @@ class LoginPage extends React.Component {
               <button className="signup-button" onClick={this.handleSubmit}>
                 Log In
               </button>
-              {/* <div className="errors">
-                {errors[0]}
-              </div> */}
             </div>
           </form>
         </div>
         <div className="singup-filler-bottom">
           <span className="signup-flink">
-            <a href="https://github.com/Fion-P/Chat-App" target="_blank">Github</a>
+            <a href="https://github.com/Fion-P/Chat-App" target="_blank">
+              Github
+            </a>
           </span>
           <span className="signup-spacer">|</span>
           <span className="signup-flink">
-            <a href="http://fion-pang.com/" target="_blank">Portfolio</a>
+            <a href="http://fion-pang.com/" target="_blank">
+              Portfolio
+            </a>
           </span>
           <span className="signup-spacer">|</span>
           <span className="signup-flink">
-            <a href="https://www.linkedin.com/in/fion-pang-429172154/" target="_blank">LinkedIn</a>
+            <a
+              href="https://www.linkedin.com/in/fion-pang-429172154/"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
           </span>
           <span className="signup-spacer">|</span>
           <span className="signup-flink">
-            <a href="https://angel.co/fion-pang-1" target="_blank">AngelList</a>
+            <a href="https://angel.co/fion-pang-1" target="_blank">
+              AngelList
+            </a>
           </span>
         </div>
       </div>
-    )
+    );
   }
 
 }
