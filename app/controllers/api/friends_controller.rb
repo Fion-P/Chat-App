@@ -3,7 +3,8 @@ class Api::FriendsController < ApplicationController
   def index
     # user = user.find(params[:user_id])
     # @friends = user.friends
-    @friends = Friend.where(user_id: params[:user_id])
+    # @friends = Friend.where(user_id: params[:user_id])
+    @friends = Friend.where(user_id: current_user.id)
     render :index
   end
 
