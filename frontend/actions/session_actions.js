@@ -6,9 +6,12 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
 const receiveCurrentUser = payload => {
   const currentUser = payload.user;
+  const friends = payload.friends;
+  console.log(friends);
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser
+    currentUser,
+    friends
   };
 };
 
