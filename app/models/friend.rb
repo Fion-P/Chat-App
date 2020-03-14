@@ -20,6 +20,9 @@ class Friend < ApplicationRecord
     foreign_key: :friend_id,
     class_name: :User
 
+  after_create :create_friendship
+  after_destroy :destroy_inverse_relationship
+
   private
 
   def create_friendship
