@@ -3,6 +3,7 @@ import {
   RECEIVE_CHATROOMS,
   JOIN_CHATROOM
 } from '../../actions/chatroom_actions';
+import { RECEIVE_USER } from "../../actions/user_actions";
 
 const chatroomsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -23,6 +24,9 @@ const chatroomsReducer = (state = {}, action) => {
     //   nextState[chatroom_id].users[user_id] = { [user_id]: { id: user_id } };
 
     //   return nextState;
+    case RECEIVE_USER: 
+      
+      return action.chatrooms;
     default:
       return state;
   }

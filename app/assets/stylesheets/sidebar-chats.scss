@@ -1,0 +1,26 @@
+.sidebar-chatrooms {
+  margin-top: 10px;
+  overflow: scroll;
+  height: 81%;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  height: 65px;
+}
+
+.sidebar-chat-pic {
+  font-size: 50px;
+  opacity: 0.8;
+}
+
+.sidebar-chats {
+  margin-top: 10px;
+}
+
+.sidebar-chat-pic {
+  font-size: 50px;
+  opacity: 0.8;
+  margin-right: 5px;
+}

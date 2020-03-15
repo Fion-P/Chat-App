@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
+    @user = User.includes(:messages, :chatroom_memberships, :chatrooms, :friendships, :friends, :chatters).find(params[:id])
   end
 
   def create

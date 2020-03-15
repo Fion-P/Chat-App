@@ -8,7 +8,7 @@ class SidebarFriendItem extends React.Component {
     return (
       <div className="friend-item">
         <div className="sidebar-friend-pic">
-          <i class="fas fa-user-circle"></i>
+          <i className="fas fa-user-circle"></i>
         </div>
         <div className="sidebar-friend-info">
           <div>

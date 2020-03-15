@@ -8,6 +8,7 @@ const mSTP = (state, ownProps) => {
   return {
     currentUser: state.entities.users[state.session.id],
     friends: Object.values(state.entities.friends),
+    chatrooms: Object.values(state.entities.chatrooms),
   };
 };
 

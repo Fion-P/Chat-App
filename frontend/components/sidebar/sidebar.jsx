@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import SidebarFriendItem from "./sidebar-friend-item";
+import SidebarChatItem from "./sidebar_chat_item";
 
 class Sidebar extends React.Component {
 
@@ -38,7 +39,8 @@ class Sidebar extends React.Component {
 
   render() {
     let user = this.props.currentUser;
-    let friends = this.props.friends;
+    let chatrooms = this.props.chatrooms;
+
     // debugger;
     return (
       <div className="sidebar">
@@ -61,9 +63,9 @@ class Sidebar extends React.Component {
           <input type="text" onChange={this.handleSearch} className="users-search-bar" placeholder="Search Messenger"/>
         </div>
 
-        <div className="sidebar-friends">
-          {friends.map( friend => {
-            return < SidebarFriendItem friend={friend} key={friend.friend_id}/>
+        <div className="sidebar-chatrooms">
+          {chatrooms.map( chatroom => {
+            return < SidebarChatItem chatroom={chatroom} key={chatroom.title + chatroom.id}/>
           })}
         </div>
       </div>

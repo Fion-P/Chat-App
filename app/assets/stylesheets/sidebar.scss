@@ -1,9 +1,9 @@
 .sidebar {
     width: 34%;
     max-width: 300px;
-    // position: fixed;
     height: 100%;
-    border-right: 1px solid rgb(230, 230, 230);
+    border-right: 1px solid #e6e6e6;
+    overflow: hidden;
 }
 
 .user-info {
@@ -15,7 +15,8 @@
 .profile-area {
     display: flex;
     justify-content: space-between;
-    height: 75px;
+    height: 10%;
+    max-height: 75px;
     align-items: center;
 }
 
@@ -49,6 +50,7 @@ input.users-search-bar {
   width: 100%;
   font-size: 14px;
   margin: 0 5.5%;
+  
 }
 
 .users-search {
@@ -56,6 +58,8 @@ input.users-search-bar {
   justify-content: center;
   align-items: center;
   position: relative;
+  height: 6%;
+  max-height: 40px;
 }
 
 svg.svg-inline--fa.fa-search.fa-w-16 {
