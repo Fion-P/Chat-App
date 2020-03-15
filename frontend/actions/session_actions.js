@@ -1,4 +1,5 @@
 import * as APIUtil from "../util/session_api_util";
+// import * as UserUtil from "../util/user_util";
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
@@ -7,7 +8,7 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 const receiveCurrentUser = payload => {
   const currentUser = payload.user;
   const friends = payload.friends;
-  console.log(friends);
+
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser,
