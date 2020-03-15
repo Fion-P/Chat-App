@@ -76,6 +76,14 @@
   .logged-out {
     height: auto;
   }
+
+    .login-no-acct-container {
+    display: block;
+  }
+
+  .demo-create-or {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -93,6 +101,14 @@
   .login-form-container {
     padding: 3.5% 0 5% 1%;
     width: auto;
+  }
+
+  .login-no-acct-container {
+    display: block;
+  }
+
+  .demo-create-or {
+    display: none;
   }
 
 }
