@@ -45,7 +45,7 @@ class Sidebar extends React.Component {
     return (
       <div className="sidebar">
         <div className="profile-area">
-          <div className="user-info">
+          <div className="user-info" onClick={() => this.props.history.push("/")}>
             {user.first_name} {user.last_name}
           </div>
           <div className="user-btns" >

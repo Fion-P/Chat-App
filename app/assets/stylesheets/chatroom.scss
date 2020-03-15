@@ -1,23 +1,33 @@
-* {
-  margin: 2px;
-  padding: 5px;
-}
-li {
-  list-style: decimal;
-}
 .chatroom-container {
+  // margin: 17px 0 0 17px;
+}
+
+.chatroom-header {
+  /* height: 38px; */
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
-.message-list {
-  overflow-y: scroll;
-  height: 300px;
-  width: 400px;
-  border: solid gray 1px;
+
+.chatroom-header-info {
+  display: flex;
+  align-items: center;
 }
-.load-button {
-  position: absolute;
-  top: 5px;
-  right: 5px;
+
+.chatroom-header-info .fa-user-circle {
+  font-size: 37px;
+  opacity: 0.8;
+}
+
+h1.chatroom-user-header {
+  padding: 0 0 0 9px;
+  font-weight: 600;
+}
+
+.chatroom-header {
+  display: flex;
+  align-items: center;
+  padding: 17px 0 17px 17px;
+  position: fixed;
+  border-bottom: 1px solid #e6e6e6;
+  width: 100%;
 }

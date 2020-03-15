@@ -9,8 +9,8 @@ const loadMessages = messages => {
   };
 };
 
-export const fetchMessages = chatroom_id => {
+export const fetchMessages = chatroom_id => dispatch => {
   return MessageAPI
     .fetchMessages(chatroom_id)
-    .then( messages => loadMessages(messages));
+    .then( messages => dispatch(loadMessages(messages)));
 };

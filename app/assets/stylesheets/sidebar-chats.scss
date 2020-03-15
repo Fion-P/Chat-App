@@ -1,13 +1,20 @@
 .sidebar-chatrooms {
-  margin-top: 10px;
+  margin-top: 15px;
   overflow: scroll;
-  height: 81%;
+  height: 80%;
+}
+
+.chat-item-container {
+  margin: 0 8px 9px 8px;
 }
 
 .chat-item {
   display: flex;
   align-items: center;
   height: 65px;
+  background: #F5F5F5;
+  border-radius: 7px;
+  cursor: pointer;
 }
 
 .sidebar-chat-pic {
