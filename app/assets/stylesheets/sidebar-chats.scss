@@ -5,16 +5,19 @@
 }
 
 .chat-item-container {
-  margin: 0 8px 9px 8px;
+  // margin: 0 8px 9px 8px;
+  margin: 0 9px 8px 9px;
 }
 
 .chat-item {
   display: flex;
   align-items: center;
   height: 65px;
-  background: #F5F5F5;
+  // background: #F5F5F5;
+  background: white;
   border-radius: 7px;
   cursor: pointer;
+  padding: 0 7px;
 }
 
 .sidebar-chat-pic {

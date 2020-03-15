@@ -8,10 +8,13 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.createChat = this.createChat.bind(this);
+    this.handleHomeRedirect = this.handleHomeRedirect.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleLogout() {
-    console.log("hit");
+    this.props.logout()
+      .then(() => this.props.history.push("/"));
   }
 
   componentDidMount() {
@@ -37,6 +40,16 @@ class Sidebar extends React.Component {
     
   }
 
+  handleHomeRedirect() {
+    let sidebarChats = document.querySelectorAll(".chat-item");
+
+    sidebarChats.forEach(chat => {
+      chat.style.background = "white";
+    });
+
+    this.props.history.push("/");
+  }
+
   render() {
     let user = this.props.currentUser;
     let chatrooms = this.props.chatrooms;
@@ -45,16 +58,16 @@ class Sidebar extends React.Component {
     return (
       <div className="sidebar">
         <div className="profile-area">
-          <div className="user-info" onClick={() => this.props.history.push("/")}>
+          <div className="user-info" onClick={this.handleHomeRedirect}>
             {user.first_name} {user.last_name}
           </div>
           <div className="user-btns" >
-            <span onClick={this.props.logout}>
+            <span onClick={this.handleLogout}>
               <i title="logout" className="fas fa-sign-out-alt" ></i>
             </span>
-            <span onClick={this.createChat}>
+            {/* <span onClick={this.createChat}>
               <i title="new message" className="far fa-edit" ></i>
-            </span>
+            </span> */}
           </div>
         </div>
 
