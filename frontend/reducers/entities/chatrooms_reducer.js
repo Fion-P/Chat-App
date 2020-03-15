@@ -26,7 +26,7 @@ const chatroomsReducer = (state = {}, action) => {
     //   return nextState;
     case RECEIVE_USER: 
       
-      return action.chatrooms;
+      return Object.assign({}, action.chatrooms);
     default:
       return state;
   }

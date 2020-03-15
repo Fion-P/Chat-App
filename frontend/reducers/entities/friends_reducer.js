@@ -5,7 +5,7 @@ const friendsReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_USER:
-      return action.friends;
+      return Object.assign({}, action.friends);
     default:
       return state;
   }
