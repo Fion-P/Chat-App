@@ -78,7 +78,7 @@ class ChannelChatRoom extends React.Component {
         messages.map(msg => {
           let key = msg.id.toString() + msg.body;
           return (
-            <div key={key}>
+            <div className="msg-item-container" key={key}>
               <ChatItem msg={msg} currentUser={currentUser} />
             </div>
           )

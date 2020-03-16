@@ -1,3 +1,38 @@
+
+.chats {
+    padding: 20px;
+    width: inherit;
+}
+
 .chat-msg-item {
+  padding: 2px 0;
+}
+
+.chat-msg {
+  min-width: 250px;
+  max-width: 42%;
+  padding: 7px 10px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.msg-sender {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.msg-sender-inner {
   background-color: rgb(0, 153, 255);
+  color: white;
+}
+
+.msg-receiver {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.msg-receiver-inner {
+  background-color: #f1f0f0;
+  color: black;
 }
