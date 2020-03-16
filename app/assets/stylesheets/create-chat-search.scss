@@ -33,6 +33,11 @@
   font-size: 19px;
 }
 
+.new-message-search .fa-plus:hover {
+  transition: 500ms ease;
+  opacity: 0.5;
+}
+
 h1.user-fullname {
   font-weight: 600;
   font-size: 20px;
