@@ -10,6 +10,7 @@ class Sidebar extends React.Component {
     this.state = {
       search: '',
       users: [],
+      chatrooms: [],
     };
 
     this.createChat = this.createChat.bind(this);
@@ -25,7 +26,11 @@ class Sidebar extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.currentUser.id);
+    this.props.fetchUser(this.props.currentUser.id)
+      .then( res => {
+        let chatrooms = Object.values(res.chatrooms) || [];
+        this.setState({ chatrooms: chatrooms });
+      });
   }
 
   createChat() {
@@ -51,14 +56,13 @@ class Sidebar extends React.Component {
 
   handleSearch(e) {
     this.setState({ search: e.currentTarget.value });
-    let query = e.currentTarget.value;
+    // let query = this.state.search.toLowerCase();
 
-    if (query.length > 0) {
-      this.props.searchUsers(query)
-        .then( (res) => {
-          this.setState({users: Object.values(res.users)});
-        });
-    }
+    // let chatrooms = this.props.chatrooms.filter(chatroom => {
+    //   return chatroom.other_users[0].toLowerCase().includes(query);
+    // });
+    
+    // this.setState({chatrooms: chatrooms});
   }
 
   handleHomeRedirect() {
@@ -77,10 +81,16 @@ class Sidebar extends React.Component {
 
   render() {
     let user = this.props.currentUser;
-    let chatrooms = this.props.chatrooms;
-
+    // let chatrooms = this.state.chatrooms;
+    // console.log(this.props.chatrooms);
     let usersShow;
     let {users} = this.state;
+
+    let query = this.state.search.toLowerCase();
+
+    let chatrooms = this.state.chatrooms.filter(chatroom => {
+      return chatroom.other_users[0].toLowerCase().includes(query);
+    });
 
     return (
       <div className="sidebar">
@@ -101,8 +111,8 @@ class Sidebar extends React.Component {
         <div className="users-search">
           <i className="fas fa-search"></i>
           <input type="text" 
-            // onChange={this.handleSearch} 
-            // value={this.state.search}
+            onChange={this.handleSearch} 
+            value={this.state.search}
             className="users-search-bar" 
             placeholder="Search Chats..."/>
         </div>
