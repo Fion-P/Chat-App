@@ -14,7 +14,13 @@ Message.delete_all
 
 # Seed Users
 
-demo = User.create({username: 'DemoUser', password: 'password', first_name: 'Demo', last_name: 'User'})
+demo1 = User.create({username: 'DemoUser', password: 'password', first_name: 'Demo', last_name: 'One'})
+demo2 = User.create({username: 'DemoUser2', password: 'password', first_name: 'Demo', last_name: 'Two'})
+demo3 = User.create({username: 'DemoUser3', password: 'password', first_name: 'Demo', last_name: 'Three'})
+demo4 = User.create({username: 'DemoUser4', password: 'password', first_name: 'Demo', last_name: 'Four'})
+demo5 = User.create({username: 'DemoUser5', password: 'password', first_name: 'Demo', last_name: 'Five'})
+demo6 = User.create({username: 'DemoUser6', password: 'password', first_name: 'Demo', last_name: 'Six'})
+demo7 = User.create({username: 'DemoUser7', password: 'password', first_name: 'Demo', last_name: 'Seven'})
 fion = User.create({username: 'FionP', password: 'password', first_name: 'Fion', last_name: 'Pang'})
 julia = User.create({username: 'JuliaW', password: 'password', first_name: 'Julia', last_name: 'Wang'})
 danna = User.create({username: 'DannaX', password: 'password', first_name: 'Danna', last_name: 'Xu'})
@@ -23,27 +29,27 @@ justin = User.create({username: 'JustinS', password: 'password', first_name: 'Ju
 
 # Seed friends
 
-Friend.create({user_id: demo.id, friend_id: fion.id})
-Friend.create({user_id: demo.id, friend_id: julia.id})
-Friend.create({user_id: demo.id, friend_id: danna.id})
-Friend.create({user_id: demo.id, friend_id: yuci.id})
+Friend.create({user_id: demo1.id, friend_id: fion.id})
+Friend.create({user_id: demo1.id, friend_id: julia.id})
+Friend.create({user_id: demo1.id, friend_id: danna.id})
+Friend.create({user_id: demo1.id, friend_id: yuci.id})
 
 # Seed Chatrooms with users
 
 chatroom1 = Chatroom.create({title: 'chatroom1'})
-  ChatroomUser.create({chatroom_id: chatroom1.id, user_id: demo.id})
-  ChatroomUser.create({chatroom_id: chatroom1.id, user_id: fion.id})
+  ChatroomUser.create({chatroom_id: chatroom1.id, user_id: demo1.id})
+  ChatroomUser.create({chatroom_id: chatroom1.id, user_id: demo2.id})
 
 chatroom2 = Chatroom.create({title: 'chatroom2'})
-  ChatroomUser.create({chatroom_id: chatroom2.id, user_id: demo.id})
+  ChatroomUser.create({chatroom_id: chatroom2.id, user_id: demo1.id})
   ChatroomUser.create({chatroom_id: chatroom2.id, user_id: julia.id})
 
 chatroom3 = Chatroom.create({title: 'chatroom3'})
-  ChatroomUser.create({chatroom_id: chatroom3.id, user_id: demo.id})
+  ChatroomUser.create({chatroom_id: chatroom3.id, user_id: demo1.id})
   ChatroomUser.create({chatroom_id: chatroom3.id, user_id: danna.id})
   
 chatroom4 = Chatroom.create({title: 'chatroom4'})
-  ChatroomUser.create({chatroom_id: chatroom4.id, user_id: demo.id})
+  ChatroomUser.create({chatroom_id: chatroom4.id, user_id: demo1.id})
   ChatroomUser.create({chatroom_id: chatroom4.id, user_id: yuci.id})
 
 # Seed Chatroom Users

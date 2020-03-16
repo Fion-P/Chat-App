@@ -123,6 +123,26 @@ button.session-button:hover {
   color: #d93025;
 }
 
+// Signup Redirect
+
+.home-to-signup {
+  padding: 2px 0 0 5px;
+  font-size: 14px;
+  font-weight: 100;
+  color: #a7a7a7;
+  /* border-bottom: 1px solid white; */
+}
+
+.home-to-signup a {
+  border-bottom: 1px solid white;
+}
+
+.home-to-signup a:hover {
+  transition: 500ms ease;
+  color: #838383;
+  border-bottom-color: #949393;
+}
+
 // Demo user 
 
 .login-no-acct-container {
@@ -138,18 +158,19 @@ h1.demo-user-header {
   font-size: 14px;
   font-weight: 100;
   color: #a7a7a7;
+  padding-bottom: 2px;
 }
 
 button.demo-btn, .create-acct-btn {
   background: black;
   font-size: 13.5px;
   color: white;
-  padding: 4px;
+  padding: 6px;
   border-radius: 5px;
   margin-top: 5px;
   display: flex;
   align-items: center;
-  width: 154px;
+  width: 148px;
 }
 
 .fa-facebook, .fa-facebook-square {
@@ -158,7 +179,7 @@ button.demo-btn, .create-acct-btn {
 }
 
 span.demo-txt {
-    padding: 0 3px 0 5px;
+    padding: 0 3px 0 7px;
 }
 
 button.demo-btn:hover, .create-acct-btn:hover {

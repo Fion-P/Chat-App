@@ -13,6 +13,7 @@ class Login extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoUser = this.handleDemoUser.bind(this);
+    this.handleDemoUser2 = this.handleDemoUser2.bind(this);
   }
 
   componentDidMount() {
@@ -37,6 +38,19 @@ class Login extends React.Component {
     });
 
     this.inputUsername("DemoUser");
+    setTimeout(() => {
+      this.inputPassword("password");
+    }, 1200);
+
+  }
+
+  handleDemoUser2() {
+    this.setState({
+      username: "",
+      password: "",
+    });
+
+    this.inputUsername("DemoUser2");
     setTimeout(() => {
       this.inputPassword("password");
     }, 1200);
@@ -71,6 +85,7 @@ class Login extends React.Component {
       let newPass = passArr.join('');
       this.inputPassword(newPass);
     }, 120);
+
   }
 
   render() {
@@ -111,7 +126,9 @@ class Login extends React.Component {
               />
               <label className="login-input-label" htmlFor="password">Password:</label>
             </div>
-            {/* <div cl></div> */}
+            <div className="home-to-signup">
+              <Link to="/signup">Don't have an account? Signup here</Link>
+            </div>
 
             <div className="session-button-container">
               <button className="session-button" onClick={this.handleSubmit}>
@@ -124,24 +141,33 @@ class Login extends React.Component {
           </form>
         </div>
         <div className="demo-user">
-          <h1 className="demo-user-header">Don't have an account?</h1>
+          <h1 className="demo-user-header">Don't want to create an account?</h1>
           <div className="login-no-acct-container">
 
-            <Link to="/signup" className="create-acct-btn" >
+            {/* <Link to="/signup" className="create-acct-btn" >
               <span>
                 <i className="fab fa-facebook"></i>
               </span>
               <span className="demo-txt">  Create An Account </span>
-            </Link>
+            </Link> */}
 
-            <h2 className="demo-create-or">or</h2>
             
             <button className="demo-btn" onClick={this.handleDemoUser}>
               <span>
                 {/* <i className="fab fa-facebook"></i> */}
                 <i className="fab fa-facebook-square"></i>
               </span>
-              <span className="demo-txt"> Try Demo Login</span>
+              <span className="demo-txt"> Try Demo Login 1</span>
+            </button>
+
+            <h2 className="demo-create-or">or</h2>
+
+            <button className="demo-btn" onClick={this.handleDemoUser2}>
+              <span>
+                {/* <i className="fab fa-facebook"></i> */}
+                <i className="fab fa-facebook-square"></i>
+              </span>
+              <span className="demo-txt"> Try Demo Login 2</span>
             </button>
           </div>
 
