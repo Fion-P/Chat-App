@@ -40,11 +40,15 @@ class ChannelChatRoom extends React.Component {
       }
     );
 
-
   }
 
-  componentDidUpdate() {
+
+
+
+  componentDidUpdate(oldProps) {
     // console.log(this.props);
+    if (this.props.match.params.chatroom_id !== oldProps.match.params.chatroom_id) this.loadMessages();
+
     let sidebarChats = document.querySelectorAll(".chat-item");
     const chatId = this.props.match.params.chatroom_id;
 
