@@ -59,8 +59,8 @@ class Login extends React.Component {
     if (password.length <= 0) {
       const user = Object.assign({}, this.state);
       return this.props
-        .login(user);
-        // .then(res => this.props.history.push(`/${res.currentUser.id}`));
+        .login(user)
+        .then(res => this.props.history.push(`/`));
       // .then(this.props.history.push(`/users/${this.props.currentUser.id}`));
     }
     setTimeout(() => {

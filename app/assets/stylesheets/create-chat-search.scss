@@ -1,0 +1,33 @@
+.user-search-item-container {
+  margin: 0 9px 8px 9px;
+}
+
+.user-search-item {
+  display: flex;
+  align-items: center;
+  height: 65px;
+  // background: #F5F5F5;
+  background: white;
+  border-radius: 7px;
+  // cursor: pointer;
+  padding: 0 7px;
+  justify-content: space-between;
+}
+
+.user-search-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-search-pic {
+  opacity: 0.8;
+  font-size: 50px;
+}
+
+.user-search-info {
+  padding: 0 0 0 7px;
+}
+
+.new-message-search .fa-plus {
+    font-size: 19px;
+}

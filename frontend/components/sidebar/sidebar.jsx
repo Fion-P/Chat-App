@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import SidebarSearchItem from "./sidebar-friend-item";
+import SidebarSearchItem from "./sidebar_search_item";
 import SidebarChatItem from "./sidebar_chat_item";
 
 class Sidebar extends React.Component {
@@ -16,6 +16,7 @@ class Sidebar extends React.Component {
     this.handleHomeRedirect = this.handleHomeRedirect.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.clearSearch = this.clearSearch.bind(this);
   }
 
   handleLogout() {
@@ -28,6 +29,12 @@ class Sidebar extends React.Component {
   }
 
   createChat() {
+    let sidebarChats = document.querySelectorAll(".chat-item");
+
+    sidebarChats.forEach(chat => {
+      chat.style.background = "white";
+    });
+
     let user = this.props.currentUser;
     let chatroom = { title: "chat" };
     this.props.createChatroom(chatroom)
@@ -52,8 +59,6 @@ class Sidebar extends React.Component {
           this.setState({users: Object.values(res.users)});
         });
     }
-    // console.log(query);
-
   }
 
   handleHomeRedirect() {
@@ -66,31 +71,16 @@ class Sidebar extends React.Component {
     this.props.history.push("/");
   }
 
+  clearSearch() {
+    this.setState({search: ""});
+  }
+
   render() {
     let user = this.props.currentUser;
     let chatrooms = this.props.chatrooms;
 
     let usersShow;
     let {users} = this.state;
-
-    if (this.state.search.length < 1) {
-      usersShow = (
-        chatrooms.map(chatroom => {
-          return < SidebarChatItem chatroom={chatroom} key={chatroom.title + chatroom.id} />
-        })
-      );
-    } else {
-      if (users.length < 1) {
-        usersShow = "Empty";
-      } else {
-        usersShow = (
-          users.map( user => {
-            let key = "userSearch" + user.id.toString();
-            return < SidebarSearchItem user={user} key={key} />
-          })
-        );
-      }
-    }
 
     return (
       <div className="sidebar">
@@ -102,22 +92,28 @@ class Sidebar extends React.Component {
             <span onClick={this.handleLogout}>
               <i title="logout" className="fas fa-sign-out-alt" ></i>
             </span>
-            {/* <span onClick={this.createChat}>
+            <span onClick={this.createChat}>
               <i title="new message" className="far fa-edit" ></i>
-            </span> */}
+            </span>
           </div>
         </div>
 
         <div className="users-search">
           <i className="fas fa-search"></i>
-          <input type="text" onChange={this.handleSearch} className="users-search-bar" placeholder="Search Messenger"/>
+          <input type="text" 
+            // onChange={this.handleSearch} 
+            // value={this.state.search}
+            className="users-search-bar" 
+            placeholder="Search Messenger"/>
         </div>
 
         <div className="sidebar-chatrooms">
-          {/* {chatrooms.map( chatroom => {
-            return < SidebarChatItem chatroom={chatroom} key={chatroom.title + chatroom.id}/>
-          })} */}
-          {usersShow}
+          {chatrooms.map( chatroom => {
+            if (chatroom.other_users.length > 0) {
+              return < SidebarChatItem chatroom={chatroom} key={chatroom.title + chatroom.id}/>
+            }
+          })}
+          {/* {usersShow} */}
         </div>
       </div>
     )

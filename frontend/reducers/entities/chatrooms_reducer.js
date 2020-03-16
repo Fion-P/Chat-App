@@ -12,18 +12,10 @@ const chatroomsReducer = (state = {}, action) => {
     case RECEIVE_CHATROOMS:
       return action.chatrooms;
     case RECEIVE_CHATROOM:
-      const newChatroom = { [action.chatroom.id]: action.chatroom };
+      // debugger;
+      const newChatroom = { [action.chatroom.id]: action.chatroom.chatroom };
       return Object.assign({}, state, newChatroom);
-    // case JOIN_CHATROOM:
-    //   let nextState = Object.assign({}, state);
 
-    //   let chatroom_id = action.chatroomUser.chatroom_id;
-    //   let user_id = action.chatroomUser.user_id;
-      
-    //   if (nextState[chatroom_id].users === undefined) nextState[chatroom_id].users = {};
-    //   nextState[chatroom_id].users[user_id] = { [user_id]: { id: user_id } };
-
-    //   return nextState;
     case RECEIVE_USER: 
       
       return Object.assign({}, action.chatrooms);

@@ -2,10 +2,7 @@ class Api::ChatroomUsersController < ApplicationController
 
   def create #add user to chat
 
-    @chatroom_user = ChatroomUser.new(
-      user_id: current_user.id,
-      chatroom_id: chatroom_user_params[:chatroom_id]
-    )
+    @chatroom_user = ChatroomUser.new(chatroom_user_params)
     
     if @chatroom_user.save
       render 'api/chatroom_users/show'
@@ -18,6 +15,6 @@ class Api::ChatroomUsersController < ApplicationController
   private
 
   def chatroom_user_params
-    params.require(:chatroom_user).permit(:chatroom_id)
+    params.require(:chatroom_user).permit(:chatroom_id, :user_id)
   end
 end

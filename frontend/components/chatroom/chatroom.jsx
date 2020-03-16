@@ -40,10 +40,11 @@ class ChannelChatRoom extends React.Component {
         }
       }
     );
+
+    this.props.fetchUser(this.props.currentUser.id);
   }
 
   componentDidUpdate(oldProps) {
-    // console.log(this.props);
     if (this.props.match.params.chatroom_id !== oldProps.match.params.chatroom_id) this.loadMessages();
 
     let sidebarChats = document.querySelectorAll(".chat-item");
@@ -60,6 +61,7 @@ class ChannelChatRoom extends React.Component {
   }
 
   render() {
+    // console.log("hit");
     if (!this.props.chatroom) return (
       <div>
         Loading...

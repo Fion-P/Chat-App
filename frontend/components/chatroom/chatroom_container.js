@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import Chatroom from './chatroom';
 import { fetchMessages } from '../../actions/message_actions';
+import {fetchUser} from "../../actions/user_actions";
 
 const mapStateToProps = (state, ownProps) => {
   const chat_id = parseInt(ownProps.match.params.chatroom_id);
@@ -16,7 +17,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchMessages: (chatroom_id) => dispatch(fetchMessages(chatroom_id))
+  fetchMessages: (chatroom_id) => dispatch(fetchMessages(chatroom_id)),
+  fetchUser: (id) => dispatch(fetchUser(id)),
 });
 
 export default withRouter(connect(
