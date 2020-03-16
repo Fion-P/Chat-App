@@ -25,12 +25,34 @@ h1.chatroom-user-header {
   font-weight: 600;
 }
 
+.chatroom-header-container {
+  height: 11%;
+  max-height: 80px;
+}
+
 .chatroom-header {
   display: flex;
   align-items: center;
   padding: 17px 0 17px 17px;
-  position: fixed;
+  // position: fixed;
   /* border-bottom: 1px solid #e6e6e6; */
-  width: 100%;
+  // width: 100%;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .10);
+}
+
+.chats-container {
+  width: 100%;
+  height: 82%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.message-form-container {
+  // position: absolute;
+  width: 100%;
+  // bottom: 0;
+  height: 7.5%;
+  display: flex;
+  align-items: center;
+  // background: lightblue;
 }

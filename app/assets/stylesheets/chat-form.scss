@@ -1,0 +1,22 @@
+.chat-form {
+  // background: pink;
+  padding: 8px;
+  width: 100%;
+}
+
+.chat-input {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 18px;
+  display: flex;
+  flex: 1 1 auto;
+  /* margin: 8px 8px 8px 0; */
+  min-width: 100px;
+  width: 45%;
+  padding: 8px 8px 8px 12px;
+}
+
+.message-form  {
+  display: flex;
+  // width: 100%;
+  padding: 0 10px 7px 5px;
+}

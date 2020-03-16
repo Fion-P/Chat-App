@@ -7,6 +7,7 @@ import { fetchMessages } from '../../actions/message_actions';
 const mapStateToProps = (state, ownProps) => {
   const chat_id = parseInt(ownProps.match.params.chatroom_id);
   return {
+    currentUser: state.entities.users[state.session.id],
     chatroom_id: chat_id,
     chatroom: state.entities.chatrooms[chat_id],
     messages: state.entities.messages,

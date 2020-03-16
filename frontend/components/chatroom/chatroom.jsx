@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import MessageForm from "./message_form";
+import { ChatItem } from "./chat_item";
 
 
 // #AC
@@ -16,39 +18,20 @@ class ChannelChatRoom extends React.Component {
   loadMessages() {
     let { fetchMessages, chatroom_id, users } = this.props;
     fetchMessages(chatroom_id)
-      .then(
-        ({ messages }) => {
-          let messagesInfo = Object.values(messages).map(
-            message => { //NOTE: USEFUL FOR HANDLING DATES
-              let created_at, len;
-              let date_now = new Date(Date());
-              let message_date = new Date(message.created_at);
-              if (date_now.toDateString() !== message_date.toDateString()) // TODO1: CHANGE TIME, AND MAYBE SAVE DATE_NOW SOMEWHERE ELSE INSTEAD OF CONSTANTLY RECREATING IT
-                created_at = message_date.toLocaleDateString();
-              else {
-                created_at = message_date.toLocaleTimeString();
-                len = created_at.length;
-                created_at = created_at.slice(0, len - 6) + created_at.slice(len - 3);
-              }
-              return {
-                body: message.body,
-                created_at: created_at,
-                name: users[message.user_id].email.split("@")[0]
-              };
-            }
-          );
-          this.setState({ messages: messagesInfo });
-        }
-      );
+      .then( data => {
+        this.setState({messages: Object.values(data.messages)});
+      });
   }
 
   componentDidMount() {
+    this.loadMessages();
+    
     App.cable.subscriptions.create(
       { channel: "ChatChannel" }, //AC: MUST MATCH THE NAME OF THE CLASS IN CHAT_CHANNEL.RB
       {
         received: data => {
           this.setState({
-            messages: this.state.messages.concat(data.message)
+            messages: this.state.messages.concat(data)
           });
         },
         speak: function (data) {
@@ -57,7 +40,6 @@ class ChannelChatRoom extends React.Component {
       }
     );
 
-    this.loadMessages();
 
   }
 
@@ -77,24 +59,50 @@ class ChannelChatRoom extends React.Component {
   }
 
   render() {
-    // console.log(this.state);
     if (!this.props.chatroom) return (
       <div>
         Loading...
       </div>
     );
 
-    // console.log(this.props.chatroom);
+    let { chatroom, currentUser } = this.props;
 
-    let { chatroom } = this.props;
+    let {messages} = this.state;
+
+    let chatDisplay;
+
+    if (!messages || messages.length < 1) {
+      chatDisplay = <div></div>
+    } else {
+      chatDisplay = (
+        messages.map(msg => {
+          let key = msg.id.toString() + msg.body;
+          return (
+            <div key={key}>
+              <ChatItem msg={msg} currentUser={currentUser} />
+            </div>
+          )
+        })
+      )
+    }
 
     return (
       <div className="chatroom-container">
-        <div className="chatroom-header">
-          <div className="chatroom-header-info">
-            <i className="fas fa-user-circle"></i>
-            <h1 className="chatroom-user-header">{chatroom.other_users[0]}</h1>
+        <div className="chatroom-header-container">
+          <div className="chatroom-header">
+            <div className="chatroom-header-info">
+              <i className="fas fa-user-circle"></i>
+              <h1 className="chatroom-user-header">{chatroom.other_users[0]}</h1>
+            </div>
           </div>
+        </div>
+        <div className="chats-container"> 
+          <div className="chats">
+            {chatDisplay}
+          </div>
+        </div>
+        <div className="message-form-container">
+          <MessageForm chatroom={chatroom} currentUser={currentUser} />
         </div>
       </div>
     )
