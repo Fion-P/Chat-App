@@ -26,11 +26,11 @@ class Sidebar extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser(this.props.currentUser.id)
-      .then( res => {
-        let chatrooms = Object.values(res.chatrooms) || [];
-        this.setState({ chatrooms: chatrooms });
-      });
+    this.props.fetchUser(this.props.currentUser.id);
+      // .then( res => {
+      //   let chatrooms = Object.values(res.chatrooms) || [];
+      //   this.setState({ chatrooms: chatrooms });
+      // });
   }
 
   createChat() {
@@ -86,11 +86,15 @@ class Sidebar extends React.Component {
     let usersShow;
     let {users} = this.state;
 
-    let query = this.state.search.toLowerCase();
+    let query = this.state.search.toLowerCase() || '';
+    let chatrooms = this.props.chatrooms;
 
-    let chatrooms = this.state.chatrooms.filter(chatroom => {
-      return chatroom.other_users[0].toLowerCase().includes(query);
-    });
+    if (chatrooms) {
+      chatrooms = chatrooms.filter(chatroom => {
+        if (chatroom.other_users.length < 1) return false;
+        return chatroom.other_users[0].toLowerCase().includes(query);
+      });
+    }
 
     return (
       <div className="sidebar">
