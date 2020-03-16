@@ -1,8 +1,9 @@
 
 .chats {
-  // padding: 20px;
-  padding: 15px 20px;
+  margin: 15px 20px;
   width: inherit;
+  height: 98%;
+  overflow: scroll;
 }
 
 .chat-msg-item {
