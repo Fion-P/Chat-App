@@ -1,15 +1,21 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import SidebarFriendItem from "./sidebar-friend-item";
+import SidebarSearchItem from "./sidebar-friend-item";
 import SidebarChatItem from "./sidebar_chat_item";
 
 class Sidebar extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      search: '',
+      users: [],
+    };
+
     this.createChat = this.createChat.bind(this);
     this.handleHomeRedirect = this.handleHomeRedirect.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   handleLogout() {
@@ -36,8 +42,18 @@ class Sidebar extends React.Component {
       });
   }
 
-  handleSearch() {
-    
+  handleSearch(e) {
+    this.setState({ search: e.currentTarget.value });
+    let query = e.currentTarget.value;
+
+    if (query.length > 0) {
+      this.props.searchUsers(query)
+        .then( (res) => {
+          this.setState({users: Object.values(res.users)});
+        });
+    }
+    // console.log(query);
+
   }
 
   handleHomeRedirect() {
@@ -54,7 +70,28 @@ class Sidebar extends React.Component {
     let user = this.props.currentUser;
     let chatrooms = this.props.chatrooms;
 
-    // debugger;
+    let usersShow;
+    let {users} = this.state;
+
+    if (this.state.search.length < 1) {
+      usersShow = (
+        chatrooms.map(chatroom => {
+          return < SidebarChatItem chatroom={chatroom} key={chatroom.title + chatroom.id} />
+        })
+      );
+    } else {
+      if (users.length < 1) {
+        usersShow = "Empty";
+      } else {
+        usersShow = (
+          users.map( user => {
+            let key = "userSearch" + user.id.toString();
+            return < SidebarSearchItem user={user} key={key} />
+          })
+        );
+      }
+    }
+
     return (
       <div className="sidebar">
         <div className="profile-area">
@@ -77,9 +114,10 @@ class Sidebar extends React.Component {
         </div>
 
         <div className="sidebar-chatrooms">
-          {chatrooms.map( chatroom => {
+          {/* {chatrooms.map( chatroom => {
             return < SidebarChatItem chatroom={chatroom} key={chatroom.title + chatroom.id}/>
-          })}
+          })} */}
+          {usersShow}
         </div>
       </div>
     )

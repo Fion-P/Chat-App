@@ -1,10 +1,10 @@
 import React from "react";
 
-class SidebarFriendItem extends React.Component {
+class SidebarSearchItem extends React.Component {
 
   render() {
-    let { friend } = this.props;
-    console.log(friend);
+    let { user } = this.props;
+    // console.log(user);
     return (
       <div className="friend-item">
         <div className="sidebar-friend-pic">
@@ -12,7 +12,7 @@ class SidebarFriendItem extends React.Component {
         </div>
         <div className="sidebar-friend-info">
           <div>
-            <h1>{friend.friend_name}</h1>
+            <h1>{user.first_name} {user.last_name}</h1>
           </div>
           <div className="create-chat-per-friend">
             {/* <i title="new message" className="far fa-edit" ></i> */}
@@ -23,4 +23,4 @@ class SidebarFriendItem extends React.Component {
   }
 }
 
-export default SidebarFriendItem;
+export default SidebarSearchItem;

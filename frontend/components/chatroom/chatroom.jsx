@@ -3,16 +3,17 @@ import { withRouter } from 'react-router-dom';
 import MessageForm from "./message_form";
 import { ChatItem } from "./chat_item";
 
-
-// #AC
 class ChannelChatRoom extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { messages: [] }
+    this.state = { 
+      messages: [],
+    };
     this.bottom = React.createRef();
 
     this.loadMessages = this.loadMessages.bind(this);
+    this.bottom = React.createRef();
   }
 
   loadMessages() {
@@ -39,11 +40,7 @@ class ChannelChatRoom extends React.Component {
         }
       }
     );
-
   }
-
-
-
 
   componentDidUpdate(oldProps) {
     // console.log(this.props);

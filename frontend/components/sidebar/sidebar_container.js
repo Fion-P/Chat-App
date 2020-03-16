@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from "../../actions/session_actions";
 import { createChatroom, createChatroomUser} from "../../actions/chatroom_actions";
+import { searchUsers } from "../../actions/user_search_actions";
 import { fetchUser } from "../../actions/user_actions";
 import Sidebar from "./sidebar";
 
@@ -17,7 +18,8 @@ const mDTP = dispatch => {
     logout: () => dispatch(logout()),
     createChatroom: (chatroom) => dispatch(createChatroom(chatroom)),
     createChatroomUser: (chatroomUser) => dispatch(createChatroomUser(chatroomUser)),
-    fetchUser: (id) => dispatch(fetchUser(id))
+    fetchUser: (id) => dispatch(fetchUser(id)),
+    searchUsers: (query) => dispatch(searchUsers(query))
   };
 };
 

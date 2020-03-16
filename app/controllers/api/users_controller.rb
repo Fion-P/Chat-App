@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
 
+
   def show
     @user = User.includes(:messages, :chatroom_memberships, :chatrooms, :friendships, :friends, :chatters).find(params[:id])
   end
@@ -21,4 +22,5 @@ class Api::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :first_name, :last_name, :password,)
   end
+
 end

@@ -35,8 +35,8 @@ class User < ApplicationRecord
     source: :chatroom
 
   has_many :chatters, 
-    through: :chatroom_memberships,
-    source: :user
+    through: :chatrooms,
+    source: :users
 
   has_many :friendships,
     foreign_key: :user_id,
