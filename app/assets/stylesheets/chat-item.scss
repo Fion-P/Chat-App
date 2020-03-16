@@ -4,6 +4,9 @@
   width: inherit;
   height: 98%;
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .chat-msg-item {

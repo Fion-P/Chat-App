@@ -104,7 +104,7 @@ class Sidebar extends React.Component {
             // onChange={this.handleSearch} 
             // value={this.state.search}
             className="users-search-bar" 
-            placeholder="Search Messenger"/>
+            placeholder="Search Chats..."/>
         </div>
 
         <div className="sidebar-chatrooms">
