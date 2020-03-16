@@ -1,7 +1,8 @@
 
 .chats {
-    padding: 20px;
-    width: inherit;
+  // padding: 20px;
+  padding: 15px 20px;
+  width: inherit;
 }
 
 .chat-msg-item {
@@ -9,12 +10,13 @@
 }
 
 .chat-msg {
-  min-width: 250px;
-  max-width: 42%;
-  padding: 7px 10px;
+  // min-width: 250px;
+  max-width: 41%;
+  padding: 7px 18px;
   border-radius: 15px;
   font-size: 15px;
   font-weight: 300;
+  word-break: break-word;
 }
 
 .msg-sender {
