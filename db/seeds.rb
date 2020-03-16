@@ -30,21 +30,21 @@ Friend.create({user_id: demo.id, friend_id: yuci.id})
 
 # Seed Chatrooms with users
 
-# chatroom1 = Chatroom.create({title: 'chatroom1'})
-#   ChatroomUser.create({chatroom_id: chatroom1.id, user_id: demo.id})
-#   ChatroomUser.create({chatroom_id: chatroom1.id, user_id: fion.id})
+chatroom1 = Chatroom.create({title: 'chatroom1'})
+  ChatroomUser.create({chatroom_id: chatroom1.id, user_id: demo.id})
+  ChatroomUser.create({chatroom_id: chatroom1.id, user_id: fion.id})
 
-# chatroom2 = Chatroom.create({title: 'chatroom2'})
-#   ChatroomUser.create({chatroom_id: chatroom2.id, user_id: demo.id})
-#   ChatroomUser.create({chatroom_id: chatroom2.id, user_id: julia.id})
+chatroom2 = Chatroom.create({title: 'chatroom2'})
+  ChatroomUser.create({chatroom_id: chatroom2.id, user_id: demo.id})
+  ChatroomUser.create({chatroom_id: chatroom2.id, user_id: julia.id})
 
-# chatroom3 = Chatroom.create({title: 'chatroom3'})
-#   ChatroomUser.create({chatroom_id: chatroom3.id, user_id: demo.id})
-#   ChatroomUser.create({chatroom_id: chatroom3.id, user_id: danna.id})
+chatroom3 = Chatroom.create({title: 'chatroom3'})
+  ChatroomUser.create({chatroom_id: chatroom3.id, user_id: demo.id})
+  ChatroomUser.create({chatroom_id: chatroom3.id, user_id: danna.id})
   
-# chatroom4 = Chatroom.create({title: 'chatroom4'})
-#   ChatroomUser.create({chatroom_id: chatroom4.id, user_id: demo.id})
-#   ChatroomUser.create({chatroom_id: chatroom4.id, user_id: yuci.id})
+chatroom4 = Chatroom.create({title: 'chatroom4'})
+  ChatroomUser.create({chatroom_id: chatroom4.id, user_id: demo.id})
+  ChatroomUser.create({chatroom_id: chatroom4.id, user_id: yuci.id})
 
 # Seed Chatroom Users
 

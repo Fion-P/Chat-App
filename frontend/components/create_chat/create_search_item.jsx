@@ -32,7 +32,8 @@ class UserSearchItem extends React.Component {
               <i className="fas fa-user-circle"></i>
             </div>
             <div className="user-search-info">
-              <h1>{user.first_name} {user.last_name}</h1>
+              <h1 className="user-fullname">{user.first_name} {user.last_name}</h1>
+              <h2 className="user-search-username"><p className="user-search-uname-label">Username: </p>{user.username}</h2>
             </div>
           </div>
 

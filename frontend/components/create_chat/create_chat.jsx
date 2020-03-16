@@ -39,7 +39,11 @@ class CreateChat extends React.Component {
       </div>
     )
 
-    let usersShow;
+    let usersShow = (
+      <div className="create-search-empty">
+        Loading...
+      </div>
+    );
     let { users } = this.state;
 
     let {chatroom, createChatroomUser} = this.props
@@ -50,7 +54,11 @@ class CreateChat extends React.Component {
       );
     } else {
       if (users.length < 1) {
-        usersShow = "Empty";
+        usersShow = (
+          <div className="create-search-empty">
+            No users by that username found
+          </div>
+        );
       } else {
         usersShow = (
           users.map(user => {
@@ -73,7 +81,7 @@ class CreateChat extends React.Component {
     return (
       <div className="create-chatroom-container">
         <div className="create-chat-header">
-          <h1>Create a new chat...</h1>
+          <h1>Create a new chat</h1>
         </div>
 
         <div className="create-user-search">
@@ -82,7 +90,7 @@ class CreateChat extends React.Component {
             onChange={this.handleSearch} 
             value={this.state.search}
             className="user-search-input"
-            placeholder="Search for a user to add..."
+            placeholder="Search for users by their username..."
           />
 
         </div>

@@ -63,7 +63,7 @@ class ChannelChatRoom extends React.Component {
   render() {
     // console.log("hit");
     if (!this.props.chatroom) return (
-      <div>
+      <div className="chat-load">
         Loading...
       </div>
     );
