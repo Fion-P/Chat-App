@@ -100,7 +100,7 @@ class Sidebar extends React.Component {
       <div className="sidebar">
         <div className="profile-area">
           <div className="user-info" onClick={this.handleHomeRedirect}>
-            {user.first_name} {user.last_name}
+            Chats
           </div>
           <div className="user-btns" >
             <span onClick={this.handleLogout}>
