@@ -26,10 +26,12 @@ class Profile extends React.Component {
   createPost(e) {
     e.preventDefault();
 
-    const post = Object.assign({}, this.state);
-    this.props.createPost(post);
-
-    this.setState({ body: "" });
+    if (this.state.body.length > 0) {
+      const post = Object.assign({}, this.state);
+      this.props.createPost(post);
+  
+      this.setState({ body: "" });
+    }
   }
 
 
@@ -39,9 +41,10 @@ class Profile extends React.Component {
     let {currentUser, posts} = this.props;
 
     let memberSince = new Date(currentUser.created_at).toDateString();
+    // console.log(this.props);
     return (
       <div className="profile-container">
-        
+
         <div className="profile-header-container">
           <div className="profile">
 
@@ -92,6 +95,7 @@ class Profile extends React.Component {
               return <PostItem 
                 post = {post}
                 deletePost = {this.props.deletePost}
+                key={post.id}
               />
             })}
           </div>

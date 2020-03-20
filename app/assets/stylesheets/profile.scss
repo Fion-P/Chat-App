@@ -60,9 +60,6 @@ span.profile-info-item-label {
   font-weight: 600;
 }
 
-.profile-create-post-container {
-    padding: 0px 15px 5px 120px;
-}
 
 .profile-create-post {
   border: 1px solid #e6e6e6;
@@ -119,19 +116,76 @@ button.create-post-btn:hover {
   opacity: 0.5;
 }
 
-.profile-posts-index {
-    height: 20%;
-    overflow: scroll;
-}
-
 .profile-header-container {
-    height: 15%;
+  height: 15%;
+}
+
+.profile-posts {
+  height: 85%;
+  overflow: scroll;
+  // min-width: 660px;
+  // width: 85%;
 }
 
 .profile-posts-index {
-    padding: 5px 15px 0 120px;
+  max-width: 680px;
+  padding: 5px 15px 0 120px;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column-reverse;
+}
+
+.profile-create-post-container {
+  max-width: 680px;
+  padding: 0px 15px 5px 120px;
+}
+
+.each-post {
+  display: flex;
+  padding: 10px;
 }
 
 .post-container {
-    display: flex;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.post-left {
+  font-size: 30px;
+  padding-right: 10px;
+  opacity: 0.8;
+}
+
+.post-author {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.post-header {
+  // display: flex;
+  // align-items: flex-end;
+}
+
+.post-time {
+  font-size: 11px;
+  /* padding-left: 5px; */
+  color: #a5a5a5;
+}
+
+.post-body {
+  min-height: 45px;
+  padding: 3px 0;
+}
+
+.delete-post {
+  position: absolute;
+  right: 6px;
+  cursor: pointer;
+}
+
+.delete-post:hover {
+  transition: 500ms ease;
+  opacity: 0.5;
 }
