@@ -23,6 +23,12 @@
 h1.chatroom-user-header {
   padding: 0 0 0 9px;
   font-weight: 600;
+  cursor: pointer;
+}
+
+h1.chatroom-user-header:hover {
+  transition: 500ms ease;
+  opacity: 0.5;
 }
 
 .chatroom-header-container {

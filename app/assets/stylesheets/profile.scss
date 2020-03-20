@@ -163,6 +163,12 @@ button.create-post-btn:hover {
     font-weight: 600;
 }
 
+.post-author a:hover {
+  transition: 500ms;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .post-header {
   // display: flex;
   // align-items: flex-end;

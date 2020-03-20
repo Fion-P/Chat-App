@@ -3,7 +3,7 @@ import {
   RECEIVE_CHATROOMS,
   JOIN_CHATROOM
 } from '../../actions/chatroom_actions';
-import { RECEIVE_USER } from "../../actions/user_actions";
+import { RECEIVE_USER, GET_CURRENT_USER } from "../../actions/user_actions";
 
 const chatroomsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -17,7 +17,7 @@ const chatroomsReducer = (state = {}, action) => {
       const newChatroom = { [action.chatroom.id]: action.chatroom.chatroom };
       return Object.assign({}, state, newChatroom);
 
-    case RECEIVE_USER: 
+    case GET_CURRENT_USER: 
       Object.values(action.chatrooms).forEach( chatroom => {
         nextState[chatroom.id] = chatroom;
       });

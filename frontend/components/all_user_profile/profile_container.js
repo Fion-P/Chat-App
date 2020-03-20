@@ -5,7 +5,7 @@ import {
   createPost, 
   deletePost
 } from "../../actions/post_actions";
-import { fetchUser } from "../../actions/user_actions";
+import { fetchUser, fetchCurrentUser } from "../../actions/user_actions";
 
 const mSTP = ( state, ownProps) => {
   const user_id = parseInt(ownProps.match.params.profile_id);
