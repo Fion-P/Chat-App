@@ -92,7 +92,7 @@ class Profile extends React.Component {
                   maxLength="255"
                   className="profile-create-post-textarea"
                   onChange={this.update("body")}
-                  placeholder="What's on your mind?"
+                  placeholder={`Write something to ${user.first_name}...`}
                   value={this.state.body}
                 >
                 </textarea>
