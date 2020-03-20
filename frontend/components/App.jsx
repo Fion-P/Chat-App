@@ -9,7 +9,7 @@ import Signup from "./session-forms/signup_container";
 import LoginPage from "./session-forms/login_page_container";
 import CreateChat from "./create_chat/create_chat_container";
 import Chatroom from "./chatroom/chatroom_container";
-import Profile from "./profile/profile_container";
+import Profile from "./current_user_profile/profile_container";
 
 const App = ({loggedIn}) => (
   loggedIn ? (

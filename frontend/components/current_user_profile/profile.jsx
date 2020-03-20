@@ -2,6 +2,10 @@ import React from "react";
 
 class Profile extends React.Component {
 
+  componentDidMount() {
+    this.props.fetchPosts(this.props.currentUser.id);
+  }
+
   render() {
 
     let {currentUser} = this.props;
