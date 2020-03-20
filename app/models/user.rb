@@ -46,6 +46,14 @@ class User < ApplicationRecord
     through: :friendships,
     source: :friend
 
+  has_many :profile_posts,
+    foreign_key: :profile_id,
+    class_name: :Post
+
+  has_many :authored_posts,
+    foreign_key: :author_id,
+    class_name: :Post
+
   def full_name
     self.first_name + " " + self.last_name
   end

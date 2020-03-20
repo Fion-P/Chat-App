@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :chatrooms, only: [ :create, :index, :show]
     resources :chatroom_users, only: [:create]
     resources :users_search, only: [:index]
+    resources :posts, only: [:create, :destroy]
 
     resources :chatrooms, only: :show do
       resources :messages, only: [:index]
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
     resources :users, only: :show do
       resources :chatrooms, only: [:index]
       # resources :friends, only: [:index]
+      resources :posts, only: [:index]
     end
 
     # resources :channel_users, only: [:create, :destroy]
