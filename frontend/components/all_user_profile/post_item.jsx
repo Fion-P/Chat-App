@@ -16,7 +16,7 @@ export default ({post, deletePost, currentUser}) => {
   }
 
   let redirect_link = `/profile/${post.author_id}`
-  if (post.author_id === currentUser.id) redirect_link = '/'
+  if (post.author_id === currentUser.id) redirect_link='/'
 
   return (
     <div className="post-container">

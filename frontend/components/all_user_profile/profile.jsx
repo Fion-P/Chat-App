@@ -7,7 +7,7 @@ class Profile extends React.Component {
     super(props);
     this.state = {
       body: "", 
-      profile_id: this.props.currentUser.id
+      profile_id: this.props.user_id
     };
 
     this.update = this.update.bind(this);
@@ -15,7 +15,14 @@ class Profile extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPosts(this.props.currentUser.id);
+    this.props.fetchPosts(this.props.user_id);
+    this.props.fetchUser(this.props.user_id);
+
+    let sidebarChats = document.querySelectorAll(".chat-item");
+
+    sidebarChats.forEach(chat => {
+      chat.style.background = "white";
+    });
   }
 
   update(field) {
@@ -38,9 +45,15 @@ class Profile extends React.Component {
 
   render() {
 
-    let {currentUser, posts} = this.props;
+    let {currentUser, posts, user} = this.props;
 
-    let memberSince = new Date(currentUser.created_at).toDateString();
+    if (!user) return (
+      <div className="chat-load">
+        Loading...
+      </div>
+    );
+
+    let memberSince = new Date(user.created_at).toDateString();
     // console.log(this.props);
     return (
       <div className="profile-container">
@@ -54,11 +67,11 @@ class Profile extends React.Component {
 
             <div className="profile-right">
               <div className="profile-header-fname">
-                {currentUser.first_name} {currentUser.last_name}
+                {user.first_name} {user.last_name}
               </div>
               <div className="profile-info">
                 <div className="profile-info-item">
-                  <span className="profile-info-item-label">Username:</span> {currentUser.username}
+                  <span className="profile-info-item-label">Username:</span> {user.username}
                 </div>
                 <div className="profile-info-item">
                   <span className="profile-info-item-label">Member Since:</span> {memberSince}
@@ -96,6 +109,7 @@ class Profile extends React.Component {
                 post = {post}
                 deletePost = {this.props.deletePost}
                 key={post.id}
+                user={user}
                 currentUser={currentUser}
               />
             })}

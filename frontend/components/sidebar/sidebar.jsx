@@ -27,10 +27,7 @@ class Sidebar extends React.Component {
 
   componentDidMount() {
     this.props.fetchUser(this.props.currentUser.id);
-      // .then( res => {
-      //   let chatrooms = Object.values(res.chatrooms) || [];
-      //   this.setState({ chatrooms: chatrooms });
-      // });
+
   }
 
   createChat() {
@@ -100,7 +97,8 @@ class Sidebar extends React.Component {
       <div className="sidebar">
         <div className="profile-area">
           <div className="user-info" onClick={this.handleHomeRedirect}>
-            Chats
+            {/* Chats */}
+            {user.first_name} {user.last_name}
           </div>
           <div className="user-btns" >
             <span onClick={this.handleLogout}>

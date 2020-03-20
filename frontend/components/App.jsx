@@ -2,14 +2,13 @@ import React from "react";
 import { connect } from 'react-redux';
 import { Route, Redirect, Switch, Link, HashRouter, withRouter } from 'react-router-dom';
 import Homepage from "./homepage/homepage";
-import { ProtectedRoute } from "../util/route_util";
-import LoggedHomeContainer from "./logged_in_page/logged_home_container";
 import Sidebar from "./sidebar/sidebar_container";
 import Signup from "./session-forms/signup_container";
 import LoginPage from "./session-forms/login_page_container";
 import CreateChat from "./create_chat/create_chat_container";
 import Chatroom from "./chatroom/chatroom_container";
-import Profile from "./current_user_profile/profile_container";
+import CurrentUserProfile from "./current_user_profile/profile_container";
+import UserProfiles from "./all_user_profile/profile_container";
 
 const App = ({loggedIn}) => (
   loggedIn ? (
@@ -17,9 +16,10 @@ const App = ({loggedIn}) => (
       <Sidebar />
       <div className="logged-content">
         <Switch>
+          <Route path="/profile/:profile_id" component={UserProfiles} />
           <Route path="/new_message/:chatroom_id" component={CreateChat} />
           <Route path="/chatroom/:chatroom_id" component={Chatroom} />
-          <Route path="/" component={Profile} />
+          <Route path="/" component={CurrentUserProfile} />
         </Switch>
       </div>
     </div>

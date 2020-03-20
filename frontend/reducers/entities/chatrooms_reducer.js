@@ -7,6 +7,7 @@ import { RECEIVE_USER } from "../../actions/user_actions";
 
 const chatroomsReducer = (state = {}, action) => {
   Object.freeze(state);
+  let nextState = Object.assign({}, state);
 
   switch (action.type) {
     case RECEIVE_CHATROOMS:
@@ -17,8 +18,10 @@ const chatroomsReducer = (state = {}, action) => {
       return Object.assign({}, state, newChatroom);
 
     case RECEIVE_USER: 
-      
-      return Object.assign({}, action.chatrooms);
+      Object.values(action.chatrooms).forEach( chatroom => {
+        nextState[chatroom.id] = chatroom;
+      });
+      return nextState;
     default:
       return state;
   }

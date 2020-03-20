@@ -1,7 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
 import MessageForm from "./message_form";
 import { ChatItem } from "./chat_item";
+import { Route, Redirect, Switch, Link, HashRouter, withRouter } from "react-router-dom";
 
 class ChannelChatRoom extends React.Component {
 
@@ -89,13 +90,17 @@ class ChannelChatRoom extends React.Component {
       )
     }
 
+    // console.log(chatroom);
+    let redirect_link = `/profile/${chatroom.otherUserId}`
+    if (chatroom.otherUserId === currentUser.id) redirect_link = '/'
+
     return (
       <div className="chatroom-container">
         <div className="chatroom-header-container">
           <div className="chatroom-header">
             <div className="chatroom-header-info">
               <i className="fas fa-user-circle"></i>
-              <h1 className="chatroom-user-header">{chatroom.other_users[0]}</h1>
+              <Link to={redirect_link}><h1 className="chatroom-user-header">{chatroom.other_users[0]}</h1></Link>
             </div>
           </div>
         </div>
