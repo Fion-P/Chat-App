@@ -79,7 +79,10 @@ class ChannelChatRoom extends React.Component {
     let chatDisplay;
 
     let user = chatroomUsers[chatroom.otherUserId];
-    let url = user.profile_pic || "anon-user.png"
+    let url = "anon-user.png";
+    if (user && user.profile_pic) {
+       url = user.profile_pic;
+    }
     let profile_pic = <img className="chatroom-profile-photo" src={url} />;
 
     if (!messages || messages.length < 1) {
