@@ -37,8 +37,15 @@
   padding-left: 15px;
 }
 
+// .profile-left {
+//   padding-right: 5px;
+// }
+
 .profile-left {
   padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 
@@ -216,9 +223,99 @@ img.post-profile-photo {
   width: 40px;
 }
 
+.update-profile {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    /* background: #007AFE; */
+}
+
 button.update-profile-btn {
     padding: 5px;
     font-size: 13px;
     background: pink;
     border-radius: 3px;
+}
+
+// .upload-profile-btn::before {
+//   content: 'Upload Photo';
+//   display: inline-block;
+//   background: white;
+//   color: #007AFE;
+//   border: 1px solid #999;
+//   border-radius: 3px;
+//   padding: 5px 8px;
+//   outline: none;
+//   white-space: nowrap;
+//   -webkit-user-select: none;
+//   cursor: pointer;
+//   text-shadow: 1px 1px #fff;
+//   font-weight: 700;
+//   font-size: 10pt;
+// }
+
+.upload-profile-btn::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.upload-profile-btn::after {
+  display: none;
+  visibility: hidden;
+}
+
+input.upload-profile-btn {
+  color: transparent;
+  width: 100px;
+  overflow: hidden;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  padding-top: 3px;
+}
+
+.upload-profile-btn::before {
+  content: 'Upload Photo';
+  display: inline-block;
+  background: inherit;
+  color: #007AFE;
+  /* border: 1px solid #999; */
+  /* border-radius: 3px; */
+  padding: 0px 3px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-size: 12px;
+  /* margin: 7px 0 0 0px; */
+  display: flex;
+  justify-content: center;
+}
+
+.upload-profile-btn:hover::before {
+  transition: 500ms ease;
+  opacity: 0.5;
+  // border-bottom: 1px solid #007AFE;
+}
+
+button.cancel-photo {
+  color: #007AFE;
+  margin-top: 3px;
+  font-size: 13px;
+}
+
+
+button.update-profile-btn:hover, button.cancel-photo:hover {
+  transition: 500ms ease;
+  opacity: 0.5;
+}
+
+button.update-profile-btn {
+  padding: 5px 8px;
+  font-size: 11.5px;
+  background: #007AFE;
+  border-radius: 3px;
+  color: white;
+  font-weight: 600;
 }

@@ -19,6 +19,7 @@ class Profile extends React.Component {
     this.createPost = this.createPost.bind(this);
     this.uploadPhoto = this.uploadPhoto.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
+    this.cancelPhoto = this.cancelPhoto.bind(this);
   }
 
   componentDidMount() {
@@ -58,6 +59,11 @@ class Profile extends React.Component {
     }
   }
 
+  cancelPhoto(e) {
+    e.preventDefault();
+    this.setState({ photoFile: null, photoUrl: null});
+  }
+
   handleUpdate(e) {
     e.preventDefault();
     const formData = new FormData();
@@ -80,6 +86,18 @@ class Profile extends React.Component {
       profile_pic = <img className="profile-photo" src={url} />
     }
 
+    let upload;
+
+    if (this.state.photoUrl) {
+      upload = <button className="cancel-photo" onClick={this.cancelPhoto}>Cancel</button>
+    } else {
+      upload = <input
+        type="file"
+        onChange={this.uploadPhoto}
+        className="upload-profile-btn"
+      />
+    }
+
     return (
       <div className="profile-container">
 
@@ -88,11 +106,7 @@ class Profile extends React.Component {
 
             <div className="profile-left">
               {profile_pic}
-              <input 
-                type="file"
-                onChange={this.uploadPhoto}
-                
-              />
+              {upload}
             </div>
 
             <div className="profile-right">
