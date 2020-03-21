@@ -2,7 +2,16 @@
 //   padding: 16px;
 // }
 
+// .profile-container {
+//   /* padding: 16px; */
+//   height: 100%;
+//   overflow: scroll;
+//   padding: 0 16px;
+// }
+
 .profile-container {
+  display: flex;
+  flex-direction: column;
   /* padding: 16px; */
   height: 100%;
   overflow: scroll;
@@ -12,7 +21,8 @@
 .profile {
   display: flex;
   // align-items: center;
-  padding: 10px 10px 0 10px;
+  // padding: 10px 10px 0 10px;
+  padding: 15px 10px 0 10px;
 }
 
 // .profile-header {
@@ -128,16 +138,27 @@ button.create-post-btn:hover {
 //   height: 15%;
 // }
 
+// .profile-header-container {
+//   // height: 17%;
+//   height: 20%;
+// }
+
 .profile-header-container {
-  // height: 17%;
-  height: 20%;
+    flex: 1;
+    /* height: 20%; */
 }
 
+// .profile-posts {
+//   height: 78%;
+//   overflow: scroll;
+//   // min-width: 660px;
+//   // width: 85%;
+// }
+
 .profile-posts {
-  height: 78%;
+  /* height: 78%; */
   overflow: scroll;
-  // min-width: 660px;
-  // width: 85%;
+  flex: 4;
 }
 
 .profile-posts-index {
