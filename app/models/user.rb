@@ -54,6 +54,8 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Post
 
+  has_one_attached :photo
+
   def full_name
     self.first_name + " " + self.last_name
   end
