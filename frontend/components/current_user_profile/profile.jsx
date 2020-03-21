@@ -41,6 +41,12 @@ class Profile extends React.Component {
     let {currentUser, posts} = this.props;
 
     let memberSince = new Date(currentUser.created_at).toDateString();
+
+    let profile_pic = <i className="fas fa-user-circle"></i>;
+
+    if (currentUser.profile_pic) {
+      profile_pic = <img className="profile-photo" src={currentUser.profile_pic} />
+    }
     // console.log(this.props);
     return (
       <div className="profile-container">
@@ -49,7 +55,7 @@ class Profile extends React.Component {
           <div className="profile">
 
             <div className="profile-left">
-              <i className="fas fa-user-circle"></i>
+              {profile_pic}
             </div>
 
             <div className="profile-right">

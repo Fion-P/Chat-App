@@ -20,6 +20,16 @@ json.chatrooms do
       json.other_users chatroom.users.select{|user| user.id != @user.id}.map{ |e| e.full_name}
       json.userIds chatroom.users.pluck(:id)
       json.otherUserId chatroom.users.select{|user| user.id != @user.id}.map{ |u| u.id}[0]
+
+    end
+  end
+end
+
+json.chatroom_users do 
+  @user.chatters.each do |user| 
+    json.set! user.id do 
+      # debugger
+      json.partial! "api/users/user", user: user
     end
   end
 end

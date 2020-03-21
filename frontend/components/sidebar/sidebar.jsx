@@ -78,6 +78,7 @@ class Sidebar extends React.Component {
 
   render() {
     let user = this.props.currentUser;
+    let chatroomUsers = this.props.chatroomUsers;
     // let chatrooms = this.state.chatrooms;
     // console.log(this.props.chatrooms);
     let usersShow;
@@ -122,7 +123,10 @@ class Sidebar extends React.Component {
         <div className="sidebar-chatrooms">
           {chatrooms.map( chatroom => {
             if (chatroom.other_users.length > 0) {
-              return < SidebarChatItem chatroom={chatroom} key={chatroom.title + chatroom.id}/>
+              return < SidebarChatItem 
+                chatroom={chatroom} 
+                chatroomUsers = {chatroomUsers}
+                key={chatroom.title + chatroom.id}/>
             }
           })}
           {/* {usersShow} */}

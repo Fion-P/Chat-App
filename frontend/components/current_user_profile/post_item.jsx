@@ -18,12 +18,15 @@ export default ({post, deletePost, currentUser}) => {
   let redirect_link = `/profile/${post.author_id}`
   if (post.author_id === currentUser.id) redirect_link = '/'
 
+  let url = post.author_profile || "anon-user.png";
+  let profile_pic = <img className="post-profile-photo" src={url} />;
+
   return (
     <div className="post-container">
       {deleteBtn}
       <div className="each-post">
         <div className="post-left">
-          <i className="fas fa-user-circle"></i>
+          {profile_pic}
         </div>
         <div className="post-right">
           <div className="post-header">

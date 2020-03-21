@@ -13,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
     chatroom: state.entities.chatrooms[chat_id],
     messages: state.entities.messages,
     friends: state.entities.friends,  
+    chatroomUsers: state.entities.chatroomUsers
   };
 };
 

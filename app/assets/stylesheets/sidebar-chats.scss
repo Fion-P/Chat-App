@@ -20,17 +20,21 @@
   padding: 0 7px;
 }
 
-.sidebar-chat-pic {
-  font-size: 50px;
-  opacity: 0.8;
-}
-
 .sidebar-chats {
   margin-top: 10px;
 }
 
 .sidebar-chat-pic {
   font-size: 50px;
-  opacity: 0.8;
+  // opacity: 0.8;
   margin-right: 5px;
+}
+
+.sidebar-chat-pic .fa-user-circle {
+  opacity: 0.8;
+}
+
+img.sidebar-chat-profile-photo {
+  border-radius: 50%;
+  width: 49px;
 }

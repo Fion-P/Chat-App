@@ -155,7 +155,7 @@ button.create-post-btn:hover {
 .post-left {
   font-size: 30px;
   padding-right: 10px;
-  opacity: 0.8;
+  // opacity: 0.8;
 }
 
 .post-author {
@@ -196,4 +196,14 @@ button.create-post-btn:hover {
 .delete-post:hover {
   transition: 500ms ease;
   opacity: 0.5;
+}
+
+img.profile-photo {
+  border-radius: 50%;
+  width: 110px;
+}
+
+img.post-profile-photo {
+  border-radius: 50%;
+  width: 40px;
 }

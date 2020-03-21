@@ -54,7 +54,16 @@ class Profile extends React.Component {
     );
 
     let memberSince = new Date(user.created_at).toDateString();
+
+    // let url = user.profile_pic|| "anon-user.png";
+    // let profile_pic = <img className="profile-photo" src={url} />;
     // console.log(this.props);
+    let profile_pic = <i className="fas fa-user-circle"></i>;
+
+    if (user.profile_pic) {
+      profile_pic = <img className="profile-photo" src={user.profile_pic} />
+    }
+
     return (
       <div className="profile-container">
 
@@ -62,7 +71,7 @@ class Profile extends React.Component {
           <div className="profile">
 
             <div className="profile-left">
-              <i className="fas fa-user-circle"></i>
+              {profile_pic}
             </div>
 
             <div className="profile-right">

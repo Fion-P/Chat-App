@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter }from "react-router-dom";
+import { withRouter, Link }from "react-router-dom";
 
 class SidebarChatItem extends React.Component {
 
@@ -25,26 +25,35 @@ class SidebarChatItem extends React.Component {
   }
   
   render() {
-    let { chatroom } = this.props;
+    let { chatroom, chatroomUsers } = this.props;
+    let user = chatroomUsers[chatroom.otherUserId];
+
+    let profile_pic = <i className="fas fa-user-circle"></i>;
+
+    if (user.profile_pic) {
+      profile_pic = <img className="sidebar-chat-profile-photo" src={user.profile_pic} />
+    }
 
     return (
-      <div className="chat-item-container">
-        <div className="chat-item" id={`${chatroom.id}`} onClick={this.handleChatChange}>
-          <div className="sidebar-chat-pic">
-            <i className="fas fa-user-circle"></i>
-          </div>
-          <div className="sidebar-chat-info">
-            <div>
-              {chatroom.other_users.map( user => {
-                return <h1 key={user}>{user}</h1>
-              })}
+      // <Link to={`/chatroom/${chatroom.id}`}> 
+        <div className="chat-item-container">
+          <div className="chat-item" id={`${chatroom.id}`} onClick={this.handleChatChange}>
+            <div className="sidebar-chat-pic">
+              {profile_pic}
             </div>
-            <div className="create-chat-per-chat">
-              {/* <i title="new message" className="far fa-edit" ></i> */}
+            <div className="sidebar-chat-info">
+              <div>
+                {chatroom.other_users.map( user => {
+                  return <h1 key={user}>{user}</h1>
+                })}
+              </div>
+              <div className="create-chat-per-chat">
+                {/* <i title="new message" className="far fa-edit" ></i> */}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      // </Link>
     )
   }
 }

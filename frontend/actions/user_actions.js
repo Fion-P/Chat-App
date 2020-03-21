@@ -20,12 +20,13 @@ const getCurrentUser = payload => {
   const user = payload.user;
   const friends = payload.friends;
   const chatrooms = payload.chatrooms;
-
+  const chatroom_users = payload.chatroom_users;
   return {
     type: GET_CURRENT_USER,
     user,
     friends,
-    chatrooms
+    chatrooms,
+    chatroom_users
   };
 };
 

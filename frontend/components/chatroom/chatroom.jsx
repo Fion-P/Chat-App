@@ -10,6 +10,7 @@ class ChannelChatRoom extends React.Component {
     super(props);
     this.state = { 
       messages: [],
+      // profPicUrl: this.props.wallUser ? this.props.wallUser.profPicUrl : "",
     };
     this.bottom = React.createRef();
 
@@ -23,6 +24,8 @@ class ChannelChatRoom extends React.Component {
       .then( data => {
         this.setState({messages: Object.values(data.messages)});
       });
+
+    
   }
 
   componentDidMount() {
@@ -69,11 +72,15 @@ class ChannelChatRoom extends React.Component {
       </div>
     );
 
-    let { chatroom, currentUser } = this.props;
+    let { chatroom, currentUser, chatroomUsers } = this.props;
 
     let {messages} = this.state;
 
     let chatDisplay;
+
+    let user = chatroomUsers[chatroom.otherUserId];
+    let url = user.profile_pic || "anon-user.png"
+    let profile_pic = <img className="chatroom-profile-photo" src={url} />;
 
     if (!messages || messages.length < 1) {
       chatDisplay = <div></div>
@@ -90,16 +97,15 @@ class ChannelChatRoom extends React.Component {
       )
     }
 
-    // console.log(chatroom);
     let redirect_link = `/profile/${chatroom.otherUserId}`
     if (chatroom.otherUserId === currentUser.id) redirect_link = '/'
-
+    
     return (
       <div className="chatroom-container">
         <div className="chatroom-header-container">
           <div className="chatroom-header">
             <div className="chatroom-header-info">
-              <i className="fas fa-user-circle"></i>
+              {profile_pic}
               <Link to={redirect_link}><h1 className="chatroom-user-header">{chatroom.other_users[0]}</h1></Link>
             </div>
           </div>
@@ -116,5 +122,6 @@ class ChannelChatRoom extends React.Component {
     )
   }
 }
+
 
 export default withRouter(ChannelChatRoom);
