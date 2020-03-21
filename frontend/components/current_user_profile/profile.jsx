@@ -79,12 +79,9 @@ class Profile extends React.Component {
 
     let memberSince = new Date(currentUser.created_at).toDateString();
 
-    let profile_pic = <i className="fas fa-user-circle"></i>;
 
-    if (currentUser.profile_pic || this.state.photoUrl) {
-      let url = this.state.photoUrl || currentUser.profile_pic;
-      profile_pic = <img className="profile-photo" src={url} />
-    }
+    let url = this.state.photoUrl || currentUser.profile_pic || "anon-profile.png";
+    let profile_pic = <img className="profile-photo" src={url} />
 
     let upload;
 
