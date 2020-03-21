@@ -106,7 +106,13 @@ class Profile extends React.Component {
 
             <div className="profile-left">
               {profile_pic}
-              {upload}
+              {
+                this.state.photoFile ? <button className="cancel-photo" onClick={this.cancelPhoto}>Cancel</button> : upload = <input
+                  type="file"
+                  onChange={this.uploadPhoto}
+                  className="upload-profile-btn"
+                />
+              }
             </div>
 
             <div className="profile-right">
