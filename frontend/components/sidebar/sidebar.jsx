@@ -89,7 +89,7 @@ class Sidebar extends React.Component {
 
     if (chatrooms) {
       chatrooms = chatrooms.filter(chatroom => {
-        if (chatroom.other_users.length < 1) return false;
+        if (!chatroom.other_users || chatroom.other_users.length < 1) return false;
         return chatroom.other_users[0].toLowerCase().includes(query);
       });
     }

@@ -13,9 +13,11 @@ const chatroomUsersReducer = (state = {}, action) => {
     case JOIN_CHATROOM:
       return Object.assign({}, state, { [action.chatroomUser.id]: action.chatroomUser });
     case GET_CURRENT_USER:
-      Object.values(action.chatroom_users).forEach(chatroom_user => {
-        nextState[chatroom_user.id] = chatroom_user;
-      });
+      if (action.chatroom_users ) {
+        Object.values(action.chatroom_users).forEach(chatroom_user => {
+          nextState[chatroom_user.id] = chatroom_user;
+        });
+      }
       return nextState;
     default:
       return state;

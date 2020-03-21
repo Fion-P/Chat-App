@@ -23,13 +23,17 @@ class UserSearchItem extends React.Component {
   render() {
     let { user } = this.props;
 
+    let url = user.profile_pic || "anon-user.png";
+    let profile_pic = <img className="post-profile-photo" src={url} />;
+
     return (
       <div className="user-search-item-container">
         <div className="user-search-item">
 
           <div className="user-search-profile">
             <div className="user-search-pic">
-              <i className="fas fa-user-circle"></i>
+              {/* <i className="fas fa-user-circle"></i> */}
+              {profile_pic}
             </div>
             <div className="user-search-info">
               <h1 className="user-fullname">{user.first_name} {user.last_name}</h1>
