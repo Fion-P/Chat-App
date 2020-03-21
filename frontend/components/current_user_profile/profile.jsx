@@ -70,7 +70,9 @@ class Profile extends React.Component {
     formData.append('user[photo]', this.state.photoFile);
     formData.append('user[id]', this.state.user.id);
 
-    this.props.updateCurrentUser(formData);
+    this.props.updateCurrentUser(formData).then(() => {
+      this.setState({ photoFile: null, photoUrl: null });
+    });
   }
 
   render() {
