@@ -4,6 +4,8 @@ import {
   JOIN_CHATROOM
 } from '../../actions/chatroom_actions';
 import { RECEIVE_USER, GET_CURRENT_USER } from "../../actions/user_actions";
+// import {} from ""
+import {LOGOUT_CURRENT_USER} from "../../actions/session_actions";
 
 const chatroomsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -12,6 +14,8 @@ const chatroomsReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CHATROOMS:
       return action.chatrooms;
+    case LOGOUT_CURRENT_USER:
+      return {};
     case RECEIVE_CHATROOM:
       // debugger;
       const newChatroom = { [action.chatroom.id]: action.chatroom.chatroom };
