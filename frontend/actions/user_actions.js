@@ -42,4 +42,11 @@ export const fetchCurrentUser = id => dispatch => {
     .then((payload) =>
       dispatch(getCurrentUser(payload))
     );
-}
+};
+
+export const updateCurrentUser = user => dispatch => {
+  return UserUtil.updateUser(user)
+    .then((payload) =>{
+      return dispatch(getCurrentUser(payload));
+    });
+};

@@ -24,7 +24,6 @@ class SidebarSearchItem extends React.Component {
           chatroom_id: chatroom_id,
           user_id: user.id
         };
-        console.log(chatUser1, chatUser2);
 
         Promise.all([this.props.createChatroomUser(chatUser2), this.props.createChatroomUser(chatUser1)])
           .then((res) =>{ 

@@ -17,10 +17,28 @@ class Api::UsersController < ApplicationController
     
   end
 
+  def update
+    @user = User.find(params[:id])
+    
+    if @user.id == current_user.id 
+      @user.update(user_params)
+
+      if @user.save
+        # debugger
+        render 'api/users/show'
+      else
+        render json: @user.errors.full_messages, status: 422
+      end
+    # else
+    #   render 
+    end
+    
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :first_name, :last_name, :password,)
+    params.require(:user).permit(:username, :email, :first_name, :last_name, :password, :photo)
   end
 
 end

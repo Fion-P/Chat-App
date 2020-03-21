@@ -5,6 +5,7 @@ import {
   createPost, 
   deletePost
 } from "../../actions/post_actions";
+import {updateCurrentUser} from "../../actions/user_actions";
 
 const mSTP = ( state, ownProps) => {
   return {
@@ -18,6 +19,7 @@ const mDTP = dispatch => {
     fetchPosts: (id) => dispatch(fetchPosts(id)),
     deletePost: (id) => dispatch(deletePost(id)),
     createPost: (id) => dispatch(createPost(id)),
+    updateCurrentUser: (user) => dispatch(updateCurrentUser(user))
   };
 };
 
