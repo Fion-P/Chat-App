@@ -19,5 +19,38 @@
 .message-form  {
   display: flex;
   // width: 100%;
-  padding: 0 10px 7px 5px;
+  // padding: 0 10px 7px 5px;
+  padding: 0 10px 0px 5px;
+  width: 90%;
+}
+
+.emoji-hidden {
+  display: none;
+}
+
+.chat-form {
+  padding: 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+svg.svg-inline--fa.fa-grin.fa-w-16 {
+  font-size: 28px;
+  opacity: 0.7;
+}
+
+.emoji-toggle {
+  cursor: pointer;
+}
+
+.emoji-toggle:hover {
+  transition: 500ms ease;
+  opacity: 0.5;
+}
+
+.emoji-picker-container {
+  position: absolute;
+  right: 3%;
+  bottom: 9%;
 }
