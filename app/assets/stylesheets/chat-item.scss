@@ -2,11 +2,13 @@
 .chats {
   margin: 15px 20px;
   width: inherit;
-  height: 98%;
+  height: 95%;
   overflow: scroll;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  // flex-direction: column;
+  // justify-content: flex-end;
+  // overflow-x: scroll;
+  flex-direction: column-reverse;
 }
 
 .chat-msg-item {
