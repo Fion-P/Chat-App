@@ -15,6 +15,7 @@ class ChannelChatRoom extends React.Component {
     this.bottom = React.createRef();
 
     this.loadMessages = this.loadMessages.bind(this);
+    // this.bottom = React.createRef();
     this.bottom = React.createRef();
   }
 
@@ -61,6 +62,8 @@ class ChannelChatRoom extends React.Component {
         chat.style.background = "white";
       }
     });
+
+    if (this.bottom.current) this.bottom.current.scrollIntoView();
 
   }
 
