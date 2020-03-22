@@ -24,6 +24,12 @@ class Profile extends React.Component {
 
   componentDidMount() {
     this.props.fetchPosts(this.props.currentUser.id);
+
+    let sidebarChats = document.querySelectorAll(".chat-item");
+
+    sidebarChats.forEach(chat => {
+      chat.style.background = "white";
+    });
   }
 
   update(e) {
@@ -136,7 +142,7 @@ class Profile extends React.Component {
         </div>
 
         <div className="profile-posts">
-          <div className="profile-create-post-container">
+          <div className="profile-create-post-container" id="profile-create-post-container-id">
             <div className="profile-create-post">
               <div className="profile-create-header">
                 Create Post
@@ -157,7 +163,7 @@ class Profile extends React.Component {
             </div>
           </div>
 
-          <div className="profile-posts-index">
+          <div className="profile-posts-index" id="profile-posts-index-id">
             {posts.map( post => {
               return <PostItem 
                 post = {post}

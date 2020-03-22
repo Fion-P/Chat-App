@@ -20,7 +20,7 @@ class SidebarChatItem extends React.Component {
     //     chat.style.background = "white";
     //   }
     // });
-
+    this.props.clickContent();
     this.props.history.push(`/chatroom/${chatroom.id}`);
   }
   

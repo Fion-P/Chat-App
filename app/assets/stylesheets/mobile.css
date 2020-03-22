@@ -84,6 +84,92 @@
   .demo-create-or {
     display: none;
   }
+
+  #show-content, #show-sidebar {
+    display: block;
+    width: 100%;
+    max-width: none;
+  }
+
+  #no-content, #no-sidebar {
+    display: none;
+  }
+
+  #profile-create-post-container-id {
+    padding: 0px 15px 5px 20px; 
+  }
+
+  #profile-posts-index-id {
+    padding: 5px 15px 0 20px;
+  }
+
+  img.profile-photo {
+    width: 75px;
+    height: 75px;
+  }
+
+  input.upload-profile-btn {
+    width: 75px;
+  }
+
+  .upload-profile-btn::before {
+    font-size: 10px;
+  }
+
+  .profile-right {
+    padding-top: 0;
+  }
+
+  button.update-profile-btn {
+    font-size: 10px;
+  }
+
+  .profile-posts {
+    height: inherit;
+  }
+
+  .profile-container {
+    height: inherit;
+    overflow: auto;
+  }
+
+  .toggle-container {
+    display: block;
+  }
+
+  .toggle {
+    margin: 10px 0 0 15px;
+    display: flex;
+    border-radius: 11px;
+    background: #007AFE;
+    width: 45px;
+    justify-content: center;
+    padding: 4px 6px;
+    color: white;
+    font-size: 16px;
+  }
+
+  .chatroom-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 12px;
+    /* padding: 17px 0 17px 17px; */
+    /* border-bottom: 1px solid #e6e6e6; */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .chats-container {
+    height: 82%;
+  }
+
+  .chatroom-container {
+    height: 95%;
+  }
+
+  .profile-area {
+    padding-bottom: 4px;
+  }
 }
 
 @media screen and (max-width: 900px) {

@@ -70,6 +70,7 @@ class Sidebar extends React.Component {
     });
 
     this.props.history.push("/");
+    this.props.clickContent();
   }
 
   clearSearch() {
@@ -126,7 +127,9 @@ class Sidebar extends React.Component {
               return < SidebarChatItem 
                 chatroom={chatroom} 
                 chatroomUsers = {chatroomUsers}
-                key={chatroom.title + chatroom.id}/>
+                key={chatroom.title + chatroom.id}
+                clickContent={this.props.clickContent}  
+              />
             }
           })}
           {/* {usersShow} */}
