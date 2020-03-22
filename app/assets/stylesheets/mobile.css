@@ -199,4 +199,10 @@
     display: none;
   }
 
+  h1.h-content2-header {
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0 0 10px 10px;
+  }
+
 }

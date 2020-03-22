@@ -48,11 +48,13 @@ class User < ApplicationRecord
 
   has_many :profile_posts,
     foreign_key: :profile_id,
-    class_name: :Post
+    class_name: :Post,
+    dependent: :destroy
 
   has_many :authored_posts,
     foreign_key: :author_id,
-    class_name: :Post
+    class_name: :Post,
+    dependent: :destroy
 
   has_one_attached :photo
 
