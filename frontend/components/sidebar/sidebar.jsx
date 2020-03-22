@@ -37,6 +37,8 @@ class Sidebar extends React.Component {
       chat.style.background = "white";
     });
 
+    this.props.clickContent();
+
     let user = this.props.currentUser;
     let chatroom = { title: "chat" };
     this.props.createChatroom(chatroom)
