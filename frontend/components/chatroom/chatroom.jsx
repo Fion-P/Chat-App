@@ -65,6 +65,11 @@ class ChannelChatRoom extends React.Component {
 
     if (this.bottom.current) this.bottom.current.scrollIntoView();
 
+    let chats = document.querySelector('.chats');
+    // document.ge
+    if (chats) {
+      chats.scrollTop = chats.scrollHeight;
+    }
   }
 
   render() {

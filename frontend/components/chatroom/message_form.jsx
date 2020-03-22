@@ -36,6 +36,10 @@ class MessageForm extends React.Component {
       );
       this.setState({ body: "" });
     }
+
+    // let chats = document.querySelector('.chats');
+    // // document.ge
+    // chats.scrollTop = chats.scrollHeight;
   }  
 
   render() {
