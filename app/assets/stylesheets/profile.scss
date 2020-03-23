@@ -288,7 +288,8 @@ input.upload-profile-btn {
   color: transparent;
   width: 100px;
   overflow: hidden;
-  height: 25px;
+  // height: 25px;
+  height: 17px;
   display: flex;
   justify-content: center;
   /* align-items: center; */
@@ -339,4 +340,12 @@ button.update-profile-btn {
   border-radius: 3px;
   color: white;
   font-weight: 600;
+}
+
+.update-photo-msg {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding-left: 9px;
+    color: #007AFE;
 }

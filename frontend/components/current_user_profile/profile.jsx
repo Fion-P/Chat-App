@@ -13,6 +13,7 @@ class Profile extends React.Component {
       user: this.props.currentUser,
       photoUrl: null,
       photoFile: null,
+      updateStatus: "",
     };
 
     this.update = this.update.bind(this);
@@ -64,7 +65,10 @@ class Profile extends React.Component {
       if (photo) {
         fileReader.readAsDataURL(photo);
       }
-    } 
+    } else {
+      this.setState({updateStatus: "Error in uploading image"});
+      
+    }
   }
 
   cancelPhoto(e) {
@@ -74,13 +78,17 @@ class Profile extends React.Component {
 
   handleUpdate(e) {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append('user[photo]', this.state.photoFile);
-    formData.append('user[id]', this.state.user.id);
-
-    this.props.updateCurrentUser(formData).then(() => {
-      this.setState({ photoFile: null, photoUrl: null });
-    });
+    if (this.state.photoFile && this.state.photoUrl) {
+      const formData = new FormData();
+      formData.append('user[photo]', this.state.photoFile);
+      formData.append('user[id]', this.state.user.id);
+  
+      this.props.updateCurrentUser(formData).then(() => {
+        this.setState({ photoFile: null, photoUrl: null, updateStatus: "Update successful" });
+      });
+    } else {
+      this.setState({updateStatus: "Error. Please try again later"});
+    }
   }
 
   render() {
@@ -117,11 +125,12 @@ class Profile extends React.Component {
             <div className="profile-left">
               {profile_pic}
               {
-                this.state.photoFile ? <button className="cancel-photo" onClick={this.cancelPhoto}>Cancel</button> : upload = <input
-                  type="file"
-                  onChange={this.uploadPhoto}
-                  className="upload-profile-btn"
-                />
+                // this.state.photoFile ? <button className="cancel-photo" onClick={this.cancelPhoto}>Cancel</button> : upload = <input
+                //   type="file"
+                //   onChange={this.uploadPhoto}
+                //   className="upload-profile-btn"
+                // />
+                upload
               }
             </div>
 
@@ -133,6 +142,9 @@ class Profile extends React.Component {
                 <div className="update-profile">
                   <button onClick={this.handleUpdate} className="update-profile-btn"> Update Profile </button>
                 </div>
+                <div className="update-photo-msg">
+                {this.state.updateStatus}
+              </div>
               </div>
               <div className="profile-info">
                 <div className="profile-info-item">
