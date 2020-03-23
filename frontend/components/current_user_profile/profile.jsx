@@ -55,14 +55,16 @@ class Profile extends React.Component {
     let photo = e.currentTarget.files[0];
     // let user = Object.assign({}, this.state.user);
     // user['photoUrl'] = photo;
-    const fileReader = new FileReader();
-    fileReader.onloadend = () => {
-      this.setState({photoFile: photo, photoUrl: fileReader.result});
-    };
+    if (photo.type === "image/jpeg" || photo.type === "image/png") {
+      const fileReader = new FileReader();
+      fileReader.onloadend = () => {
+        this.setState({ photoFile: photo, photoUrl: fileReader.result });
+      };
 
-    if (photo) {
-      fileReader.readAsDataURL(photo);
-    }
+      if (photo) {
+        fileReader.readAsDataURL(photo);
+      }
+    } 
   }
 
   cancelPhoto(e) {
@@ -96,11 +98,14 @@ class Profile extends React.Component {
     if (this.state.photoUrl) {
       upload = <button className="cancel-photo" onClick={this.cancelPhoto}>Cancel</button>
     } else {
-      upload = <input
-        type="file"
-        onChange={this.uploadPhoto}
-        className="upload-profile-btn"
-      />
+      upload = (
+        <input
+          type="file"
+          onChange={this.uploadPhoto}
+          className="upload-profile-btn"
+          accept="image/x-png,image/gif,image/jpeg"
+        />
+      );
     }
 
     return (
