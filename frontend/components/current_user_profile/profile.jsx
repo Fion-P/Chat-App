@@ -140,7 +140,7 @@ class Profile extends React.Component {
                   {currentUser.first_name} {currentUser.last_name}
                 </div>
                 <div className="update-profile">
-                  <button onClick={this.handleUpdate} className="update-profile-btn"> Update Profile </button>
+                  <button onClick={this.handleUpdate} className="update-profile-btn"> Save Updates </button>
                 </div>
                 <div className="update-photo-msg">
                 {this.state.updateStatus}
